@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: f8766c17-aaf8-4b55-9431-de8deea83842
-  instanceId: 7de058d2-1b2e-4c8e-8cd3-0d6c234a0679
+  instanceId: 9f597ec8-f6a3-4c31-9ed7-d609fa5d2e91
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: f8338144-8280-4ff6-9455-ae2bb9c20fe8
@@ -206,6 +206,7 @@ GameObject:
   - component: {fileID: 5484065886996321823}
   - component: {fileID: 1676643486}
   - component: {fileID: 826018453361443371}
+  - component: {fileID: 5249411485248570194}
   m_Layer: 0
   m_Name: Oppy
   m_TagString: Untagged
@@ -303,13 +304,13 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 0.51
-  m_Radius: 0.2
+  m_Height: 0.53
+  m_Radius: 0.11
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.33, z: 0}
+  m_Center: {x: 0, y: 0.27, z: 0}
 --- !u!54 &826018453361443371
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -332,11 +333,32 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &5249411485248570194
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7107983976591372239}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.22, y: 0.4211334, z: 0.22}
+  m_Center: {x: -0, y: 0.2155667, z: -0}
 --- !u!1001 &485879770877214258
 PrefabInstance:
   m_ObjectHideFlags: 0
