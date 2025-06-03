@@ -6,8 +6,7 @@ namespace Managers.MainMenu
 {
     public class UIMainMenuCanvasManager : MonoBehaviour
     {
-        [SerializeField]
-        private string _MainSceneName;
+        [SerializeField] private string _MainSceneName;
     
         private Button _xStartButton;
         

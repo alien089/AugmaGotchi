@@ -1,4 +1,5 @@
 using Framework.Generics.Pattern.SingletonPattern;
+using Misc;
 using UnityEngine.SceneManagement;
 
 namespace Managers.MainMenu

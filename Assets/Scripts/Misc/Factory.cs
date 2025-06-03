@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public static class Factory
+namespace Misc
 {
-    public static EventManager CreateEventManager()
+    public static class Factory
     {
-        return new EventManager();
+        public static EventManager CreateEventManager()
+        {
+            return new EventManager();
+        }
     }
 }

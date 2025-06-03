@@ -1,4 +1,5 @@
 using Framework.Generics.Pattern.SingletonPattern;
+using Misc;
 using UnityEngine.SceneManagement;
 
 namespace Managers
@@ -14,11 +15,6 @@ namespace Managers
         private void Start()
         {
             _xSaveManager = GetComponentInChildren<SaveManager>();
-        }
-
-        public void WinGame(object[] param)
-        {
-            SceneManager.LoadScene((int)param[0]);
         }
     }
 }

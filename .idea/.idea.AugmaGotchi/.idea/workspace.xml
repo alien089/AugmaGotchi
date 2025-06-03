@@ -6,14 +6,28 @@
   <component name="ChangeListManager">
     <list default="true" id="d7b1ed3e-decc-455b-a3ef-083600f08c3a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AugmaGotchi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AugmaGotchi/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Character/Oppy/prefabs/Oppy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Character/Oppy/prefabs/Oppy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Character/Scripts/OppyCharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Character/Scripts/OppyCharacterController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Character/Oppy/prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Character/Oppy/prefabs/Oppy.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Character/Oppy/prefabs/Oppy.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FlatUnityCanvas.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FlatUnityCanvas.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/MainMenu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/MainMenu.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/scn_MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/scn_MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/scn_Testing.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/scn_Testing.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Design Patterns/Singleton/Singleton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Design Patterns/Singleton/Singleton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/scn_Testing.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/scn_Testing.unity.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/MainMenu/MainMenuGameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/MainMenu/MainMenuGameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/MainMenu/UIMainMenuCanvasManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/MainMenu/UIMainMenuCanvasManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/SaveManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/SaveManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Misc/Constants.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Misc/Constants.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Misc/Constants.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Misc/Events.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Misc/Constants.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Misc/Events.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Misc/Enumerators.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Misc/Enumerators.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Misc/Factory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Misc/Factory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UIMainMenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/MainMenu/UIMainMenuManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UIMainMenuManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/MainMenu/UIMainMenuManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +38,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/UIMainMenuManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/37cc348edc804f4cb176b63962c716e7177200/f8/39383784/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/MainMenu/UIMainMenuManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.meta.xr.sdk.core@76.0.0/Editor/OVRProjectSetup/Tasks/Processors/OVRConfigurationTaskUpdaterSummary.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.meta.xr.sdk.core@76.0.0/Scripts/OVRManager.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -109,7 +124,7 @@
       <workItem from="1748020989058" duration="5000" />
       <workItem from="1748253744196" duration="698000" />
       <workItem from="1748434839904" duration="3199000" />
-      <workItem from="1748796344416" duration="25695000" />
+      <workItem from="1748796344416" duration="38110000" />
     </task>
     <servers />
   </component>
@@ -130,17 +145,17 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Managers/MainMenu/UIMainMenuCanvasManager.cs</url>
-          <line>23</line>
-          <properties documentPath="C:\Users\Gabriel\Documents\AProjects\Exams\Specialization Project\AugmaGotchi\Assets\Scripts\Managers\MainMenu\UIMainMenuCanvasManager.cs" containingFunctionPresentation="Method 'LoadMainScene'">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/UI System/CanvasManagerSpawnAugma.cs</url>
+          <line>19</line>
+          <properties documentPath="C:\Users\Gabriel\Documents\AProjects\Exams\Specialization Project\AugmaGotchi\Assets\Scripts\UI System\CanvasManagerSpawnAugma.cs" containingFunctionPresentation="Method 'SpawnAugma'">
             <startOffsets>
-              <option value="590" />
+              <option value="430" />
             </startOffsets>
             <endOffsets>
-              <option value="683" />
+              <option value="505" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="4" />
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

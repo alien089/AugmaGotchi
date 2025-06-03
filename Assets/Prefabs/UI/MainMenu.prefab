@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1, y: -0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2524761892499882352
@@ -325,15 +325,15 @@ RectTransform:
   m_LocalScale: {x: 0.002, y: 0.002, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 6992626671988553753}
   - {fileID: 2599222990586908084}
   - {fileID: 8487548156226152203}
-  - {fileID: 6992626671988553753}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.00000099838, y: 0.8794}
-  m_SizeDelta: {x: 519.2271, y: 306.3846}
+  m_AnchoredPosition: {x: 0, y: 1}
+  m_SizeDelta: {x: 520, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4024955123550498809
 Canvas:
@@ -380,7 +380,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &1519464673227914797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -410,7 +410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5faebfdbfc44ce94ba4b86a144d3f19e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _MainSceneName: scn_Testing
+  _MainSceneName: scn_PlayScene
 --- !u!1 &3556617893223871433
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,8 +447,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -141.88, y: -0.02999878}
+  m_SizeDelta: {x: -361.71, y: -271.87}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8650829344693119431
 MonoBehaviour:
@@ -492,7 +492,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _position: {x: 0, y: 0, z: 0}
-  _size: {x: 519.2271, y: 306.3846, z: 0.01}
+  _size: {x: 158.29001, y: 28.130005, z: 0.01}
 --- !u!114 &7330080284340361537
 MonoBehaviour:
   m_ObjectHideFlags: 0

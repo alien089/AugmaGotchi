@@ -1,0 +1,15 @@
+public static class MainMenuEventList
+{
+    /// <summary>
+    /// params: string sceneName
+    /// </summary>
+    public static string LOAD_SCENE = "LOAD_SCENE";
+}
+
+public static class AugmaEventList 
+{
+    /// <summary>
+    /// params: none
+    /// </summary>
+    public static string SPAWN_AUGMA = "SPAWN_AUGMA";
+}
