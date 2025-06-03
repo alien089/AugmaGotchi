@@ -83,10 +83,10 @@ namespace Meta.XR.MRUtilityKitSamples.PassthroughRelighting
 
         void Update()
         {
-            GetLocomotionInput();
-            HandleLocomotion();
-            HandleJumping();
-            ApplyMotion();
+            // GetLocomotionInput();
+            // HandleLocomotion();
+            // HandleJumping();
+            // ApplyMotion();
         }
 
         public void Respawn()

@@ -1,9 +1,9 @@
 using Framework.Generics.Pattern.SingletonPattern;
 using UnityEngine.SceneManagement;
 
-namespace Managers
+namespace Managers.MainMenu
 {
-    public class GameManager : Singleton<GameManager>
+    public class MainMenuGameManager : Singleton<MainMenuGameManager>
     {
         private EventManager _xEventManager = Factory.CreateEventManager();
         private SaveManager _xSaveManager; 
@@ -14,11 +14,13 @@ namespace Managers
         private void Start()
         {
             _xSaveManager = GetComponentInChildren<SaveManager>();
+            
+            Instance.EventManager.Register(MainMenuEventList.LOAD_SCENE, LoadMainScene);
         }
-
-        public void WinGame(object[] param)
+        
+        private void LoadMainScene(object[] param)
         {
-            SceneManager.LoadScene((int)param[0]);
+            SceneManager.LoadScene((string)param[0]);
         }
     }
 }

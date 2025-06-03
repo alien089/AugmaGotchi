@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using Managers;
 using UnityEngine;
 
 public class SaveManager : MonoBehaviour
@@ -8,8 +9,8 @@ public class SaveManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameManager.instance.EventManager.Register(Constants.SAVE_FLOAT, SaveFloat);
-        GameManager.instance.EventManager.Register(Constants.LOAD_FLOAT, LoadFloat);
+        // GameManager.instance.EventManager.Register(Constants.SAVE_FLOAT, SaveFloat);
+        // GameManager.instance.EventManager.Register(Constants.LOAD_FLOAT, LoadFloat);
     }
 
     /// <summary>
