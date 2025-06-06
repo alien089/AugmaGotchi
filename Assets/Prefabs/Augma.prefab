@@ -2802,6 +2802,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 939478abcbac11544a199de46f65b466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _fMaxValuesStats:
+    _keys: 020000000100000000000000
+    _values:
+    - 1
+    - 1
+    - 1
+  _fCurrentValuesStats:
+    _keys: 
+    _values: []
+  _fDecrementValue:
+    _keys: 000000000100000002000000
+    _values:
+    - 0.01
+    - 0.05
+    - 0.1
 --- !u!1 &6277746039609309932
 GameObject:
   m_ObjectHideFlags: 0

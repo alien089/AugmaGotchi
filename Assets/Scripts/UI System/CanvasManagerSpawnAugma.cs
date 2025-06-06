@@ -17,6 +17,7 @@ namespace UI_System
 
         private void SpawnAugma()
         {
+            GetComponent<Canvas>().enabled = false;
             GameManager.Instance.EventManager.TriggerEvent(AugmaEventList.SPAWN_AUGMA);
         }
     }

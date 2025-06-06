@@ -11,5 +11,6 @@ public static class AugmaEventList
     /// <summary>
     /// params: none
     /// </summary>
-    public static string SPAWN_AUGMA = "SPAWN_AUGMA";
+    public static string SPAWN_AUGMA = "SPAWN_AUGMA"; 
+    public static string GIVE_AUGMA_TO_UI = "GIVE_AUGMA_TO_UI";
 }

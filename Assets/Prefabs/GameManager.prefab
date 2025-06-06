@@ -46,6 +46,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AugmaPrefab: {fileID: 6175803804760289222, guid: bd8120e4a733d1b4ab18fbeb92853d5a,
     type: 3}
+  _fMaxValuesStats:
+    _keys: 000000000100000002000000
+    _values:
+    - 1
+    - 1
+    - 1
+  _fCurrentValuesStats:
+    _keys: 
+    _values: []
+  _fDecrementValue:
+    _keys: 000000000100000002000000
+    _values:
+    - 0.01
+    - 0.05
+    - 0.1
 --- !u!1 &5331290088667759772
 GameObject:
   m_ObjectHideFlags: 0
