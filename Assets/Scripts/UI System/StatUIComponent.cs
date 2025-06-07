@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace UI_System
 {
-    public class StatComponent : MonoBehaviour
+    public class StatUIComponent : MonoBehaviour
     {
         [SerializeField] private Stats _xStatsType;
         private Image _xProgressBar;

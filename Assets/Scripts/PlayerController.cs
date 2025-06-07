@@ -8,8 +8,8 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private Transform _xCenterEyeAnchor;
     
     
-    private Vector3 _fplayerPosition;
-    public Vector3 FPlayerPosition => _fplayerPosition;
+    private Transform _fplayerPosition;
+    public Transform FPlayerPosition => _fplayerPosition;
 
     
     // Start is called before the first frame update
@@ -21,6 +21,6 @@ public class PlayerController : Singleton<PlayerController>
     // Update is called once per frame
     void Update()
     {
-        _fplayerPosition = _xCenterEyeAnchor.position;
+        _fplayerPosition = _xCenterEyeAnchor;
     }
 }

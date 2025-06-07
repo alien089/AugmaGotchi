@@ -3,6 +3,9 @@ using Enums;
 
 namespace Managers
 {
+    [System.Serializable()]
+    public class StatsDictionary : SerializableDictionaryBase<Stats, float> { }
+    
     public class AugmaManager : MonoBehaviour
     {
         [SerializeField] private GameObject AugmaPrefab;
@@ -35,7 +38,7 @@ namespace Managers
         {
             if (_xAugma != null) return;
             
-            _xAugma = Instantiate(AugmaPrefab, PlayerController.Instance.FPlayerPosition + new Vector3(0,0,0.4f), Quaternion.identity);
+            _xAugma = Instantiate(AugmaPrefab, PlayerController.Instance.FPlayerPosition.position + new Vector3(0,0,0.4f), Quaternion.identity);
             GameManager.Instance.EventManager.TriggerEvent(AugmaEventList.GIVE_AUGMA_TO_UI, this);
             
             foreach (var x in _fMaxValuesStats)

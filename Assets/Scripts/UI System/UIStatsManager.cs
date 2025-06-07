@@ -10,14 +10,14 @@ namespace UI_System
     public class UIStatsManager : MonoBehaviour
     {
         private AugmaManager _xAugma;
-        private Dictionary<Stats, StatComponent> _xStatComponent = new Dictionary<Stats, StatComponent>();
+        private Dictionary<Stats, StatUIComponent> _xStatComponent = new Dictionary<Stats, StatUIComponent>();
     
         void Start()
         {
             GameManager.Instance.EventManager.Register(AugmaEventList.GIVE_AUGMA_TO_UI, GetAugma);
-            StatComponent[] tmp = transform.GetComponentsInChildren<StatComponent>();
+            StatUIComponent[] tmp = transform.GetComponentsInChildren<StatUIComponent>();
             
-            foreach (StatComponent t in tmp)
+            foreach (StatUIComponent t in tmp)
             {
                 _xStatComponent.Add(t.XStatsType, t);
             }
@@ -29,7 +29,7 @@ namespace UI_System
         {
             if (!_xAugma) return;
 
-            foreach (KeyValuePair<Stats, StatComponent> x in _xStatComponent)
+            foreach (KeyValuePair<Stats, StatUIComponent> x in _xStatComponent)
             {
                 x.Value.XProgressBar.fillAmount = _xAugma.FCurrentValuesStats[x.Key];
             }

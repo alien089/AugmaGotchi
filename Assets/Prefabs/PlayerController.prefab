@@ -13169,7 +13169,14 @@ PrefabInstance:
       value: ProgressBar
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6800724867277817018, guid: c5e85cb0f339f134bb453b05f5681cb5, type: 3}
+    - {fileID: 1162288691398177902, guid: c5e85cb0f339f134bb453b05f5681cb5, type: 3}
+    - {fileID: 591783782958595043, guid: c5e85cb0f339f134bb453b05f5681cb5, type: 3}
+    - {fileID: 4461462182930460613, guid: c5e85cb0f339f134bb453b05f5681cb5, type: 3}
+    - {fileID: 7728275728703762996, guid: c5e85cb0f339f134bb453b05f5681cb5, type: 3}
+    - {fileID: 5931345714352499706, guid: c5e85cb0f339f134bb453b05f5681cb5, type: 3}
+    - {fileID: 5161564297857126185, guid: c5e85cb0f339f134bb453b05f5681cb5, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4292434660482304870, guid: c5e85cb0f339f134bb453b05f5681cb5,
         type: 3}
@@ -13468,7 +13475,14 @@ PrefabInstance:
       value: CanvasStatBarJoy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4045240110902631735, guid: 6f5c51785652a3f44918fe3f392fbfa8, type: 3}
+    - {fileID: 8530895382232444387, guid: 6f5c51785652a3f44918fe3f392fbfa8, type: 3}
+    - {fileID: 7959236554593182318, guid: 6f5c51785652a3f44918fe3f392fbfa8, type: 3}
+    - {fileID: 6604774565810370120, guid: 6f5c51785652a3f44918fe3f392fbfa8, type: 3}
+    - {fileID: 937534438834236345, guid: 6f5c51785652a3f44918fe3f392fbfa8, type: 3}
+    - {fileID: 3752286626848830071, guid: 6f5c51785652a3f44918fe3f392fbfa8, type: 3}
+    - {fileID: 2441826412560979620, guid: 6f5c51785652a3f44918fe3f392fbfa8, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f5c51785652a3f44918fe3f392fbfa8, type: 3}
@@ -13638,7 +13652,14 @@ PrefabInstance:
       value: CanvasStatBarCaress
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4045240110902631735, guid: 6f5c51785652a3f44918fe3f392fbfa8, type: 3}
+    - {fileID: 8530895382232444387, guid: 6f5c51785652a3f44918fe3f392fbfa8, type: 3}
+    - {fileID: 7959236554593182318, guid: 6f5c51785652a3f44918fe3f392fbfa8, type: 3}
+    - {fileID: 6604774565810370120, guid: 6f5c51785652a3f44918fe3f392fbfa8, type: 3}
+    - {fileID: 937534438834236345, guid: 6f5c51785652a3f44918fe3f392fbfa8, type: 3}
+    - {fileID: 3752286626848830071, guid: 6f5c51785652a3f44918fe3f392fbfa8, type: 3}
+    - {fileID: 2441826412560979620, guid: 6f5c51785652a3f44918fe3f392fbfa8, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f5c51785652a3f44918fe3f392fbfa8, type: 3}

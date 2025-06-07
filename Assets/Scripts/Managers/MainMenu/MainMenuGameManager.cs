@@ -1,11 +1,14 @@
 using Framework.Generics.Pattern.SingletonPattern;
 using Misc;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Managers.MainMenu
 {
     public class MainMenuGameManager : Singleton<MainMenuGameManager>
     {
+        [SerializeField] private string _MainSceneName;
+        
         private EventManager _xEventManager = Factory.CreateEventManager();
         private SaveManager _xSaveManager; 
 
@@ -21,7 +24,7 @@ namespace Managers.MainMenu
         
         private void LoadMainScene(object[] param)
         {
-            SceneManager.LoadScene((string)param[0]);
+            SceneManager.LoadScene(_MainSceneName);
         }
     }
 }

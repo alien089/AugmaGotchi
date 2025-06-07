@@ -1,13 +1,10 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Managers.MainMenu
 {
     public class UIMainMenuCanvasManager : MonoBehaviour
     {
-        [SerializeField] private string _MainSceneName;
-    
         private Button _xStartButton;
         
         void Start()
@@ -19,7 +16,7 @@ namespace Managers.MainMenu
 
         private void LoadMainScene()
         {
-            MainMenuGameManager.Instance.EventManager.TriggerEvent(MainMenuEventList.LOAD_SCENE, _MainSceneName);
+            MainMenuGameManager.Instance.EventManager.TriggerEvent(MainMenuEventList.LOAD_SCENE);
         }
     }
 }
