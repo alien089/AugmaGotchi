@@ -14,3 +14,11 @@ public static class AugmaEventList
     public static string SPAWN_AUGMA = "SPAWN_AUGMA"; 
     public static string GIVE_AUGMA_TO_UI = "GIVE_AUGMA_TO_UI";
 }
+
+public static class FoodEventList 
+{
+    /// <summary>
+    /// params: none 
+    /// </summary>
+    public static string RESPAWN_FOOD = "RESPAWN_FOOD"; 
+}

@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 3879541397241288847}
   - component: {fileID: 2717071361635835236}
   - component: {fileID: 4724615517255791898}
+  - component: {fileID: 6488180513182257072}
   m_Layer: 0
   m_Name: alienFood
   m_TagString: Untagged
@@ -228,7 +229,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
@@ -255,3 +256,15 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -226821447553420835, guid: e0b2712e3a4e2a34da26f034b4f05c22, type: 3}
+--- !u!114 &6488180513182257072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3588499602321166079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6584cd8e717f4a5984abbf414011dd19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
