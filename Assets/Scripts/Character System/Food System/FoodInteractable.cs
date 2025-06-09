@@ -12,6 +12,7 @@ namespace Character_System.Food_System
         private Grabbable _xGrabbable;
         private HandGrabInteractable _xHandGrabInteractable; 
         private GrabInteractable _xGrabInteractable;
+        private HandActiveState _xHandActiveState;
         
         private MeshCollider _xCollider;
         
@@ -20,9 +21,17 @@ namespace Character_System.Food_System
             _xGrabbable = GetComponentInChildren<Grabbable>();
             _xHandGrabInteractable = GetComponentInChildren<HandGrabInteractable>();
             _xGrabInteractable = GetComponentInChildren<GrabInteractable>();
+            _xHandActiveState = GetComponent<HandActiveState>();
             
             _xCollider = GetComponent<MeshCollider>();
             _xCollider.isTrigger = false;
+            
+            
+        }
+
+        private void OnChangeState()
+        {
+            
         }
 
         private void OnDestroy()
