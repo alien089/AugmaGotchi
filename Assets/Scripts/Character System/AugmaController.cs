@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Character_System.StateMachine;
 using Enums;
+using Managers;
 using UnityEngine;
 
 namespace Character_System
@@ -20,6 +21,8 @@ namespace Character_System
         {
             _xAugmaStateManager = new AugmaStateManager();
             _xAugmaStateManager.CurrentState = _xAugmaStateManager.StatesList[AugmaStates.IDLE];
+            
+            GameManager.Instance.EventManager.Register(AugmaEventList.CHANGE_AUGMA_STATE, SetFlag);
             
             _states.Add(AugmaStates.JOY, true);
             _states.Add(AugmaStates.FOOD, false);

@@ -17,6 +17,11 @@ public static class AugmaEventList
     /// params: AugmaManager class instance
     /// </summary>
     public static string GIVE_AUGMA_TO_UI = "GIVE_AUGMA_TO_UI";
+    
+    /// <summary>
+    /// params: AugmaStates enum
+    /// </summary>
+    public static string CHANGE_AUGMA_STATE = "CHANGE_AUGMA_STATE";
 }
 
 public static class FoodEventList 

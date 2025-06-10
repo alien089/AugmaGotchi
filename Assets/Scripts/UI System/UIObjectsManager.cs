@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using Enums;
 using Managers;
 using UnityEngine;
 
@@ -43,11 +44,13 @@ public class UIObjectsManager : MonoBehaviour
     private void FoodGrabbed(object[] param)
     {
         _xFoodInstance.transform.SetParent(null);
+        GameManager.Instance.EventManager.TriggerEvent(AugmaEventList.CHANGE_AUGMA_STATE, AugmaStates.FOOD);
     }
     
     private void FoodUngrabbed(object[] param)
     {
         SpawnItem(ref _xFoodInstance, _xFoodPrefab, _xFoodPosition);
+        GameManager.Instance.EventManager.TriggerEvent(AugmaEventList.CHANGE_AUGMA_STATE, AugmaStates.IDLE);
     }
 
     #endregion
