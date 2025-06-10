@@ -12,6 +12,10 @@ public static class AugmaEventList
     /// params: none
     /// </summary>
     public static string SPAWN_AUGMA = "SPAWN_AUGMA"; 
+    
+    /// <summary>
+    /// params: AugmaManager class instance
+    /// </summary>
     public static string GIVE_AUGMA_TO_UI = "GIVE_AUGMA_TO_UI";
 }
 
@@ -21,4 +25,32 @@ public static class FoodEventList
     /// params: none 
     /// </summary>
     public static string RESPAWN_FOOD = "RESPAWN_FOOD"; 
+    
+    /// <summary>
+    /// params: none 
+    /// </summary>
+    public static string FOOD_GRABBED = "FOOD_GRABBED"; 
+    
+    /// <summary>
+    /// params: none 
+    /// </summary>
+    public static string FOOD_UNGRABBED = "FOOD_UNGRABBED"; 
+}
+
+public static class ToyEventList 
+{
+    /// <summary>
+    /// params: none 
+    /// </summary>
+    public static string RESPAWN_TOY = "RESPAWN_TOY"; 
+    
+    /// <summary>
+    /// params: none 
+    /// </summary>
+    public static string TOY_GRABBED = "TOY_GRABBED"; 
+    
+    /// <summary>
+    /// params: none 
+    /// </summary>
+    public static string TOY_UNGRABBED = "TOY_UNGRABBED"; 
 }

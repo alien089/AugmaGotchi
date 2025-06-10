@@ -25,15 +25,24 @@ namespace Character_System.Food_System
             
             _xCollider = GetComponent<MeshCollider>();
             _xCollider.isTrigger = false;
-            
-            
+
+            //on grab event
+            _xHandGrabInteractable.WhenSelectingInteractorViewAdded += OnGrabEnter;
+            _xHandGrabInteractable.WhenSelectingInteractorViewRemoved += OnGrabExit;
         }
 
-        private void OnChangeState()
+        private void OnGrabEnter(IInteractorView interactor)
         {
-            
+            GameManager.Instance.EventManager.TriggerEvent(FoodEventList.FOOD_GRABBED);
+        }
+        
+        private void OnGrabExit(IInteractorView interactor)
+        {
+            GameManager.Instance.EventManager.TriggerEvent(FoodEventList.FOOD_UNGRABBED);
+            Destroy(gameObject);
         }
 
+        
         private void OnDestroy()
         {
             GameManager.Instance.EventManager.TriggerEvent(FoodEventList.RESPAWN_FOOD);

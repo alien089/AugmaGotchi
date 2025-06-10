@@ -9,7 +9,7 @@ public abstract class DrawableDictionary
 }
 
 [System.Serializable()]
-public class SerializableDictionaryBase<TKey, TValue> : DrawableDictionary, IDictionary<TKey, TValue>, UnityEngine.ISerializationCallbackReceiver
+public class SerializableDictionaryBase<TKey, TValue> : DrawableDictionary, IDictionary<TKey, TValue>, ISerializationCallbackReceiver
 {
 
     #region Fields
@@ -167,12 +167,12 @@ public class SerializableDictionaryBase<TKey, TValue> : DrawableDictionary, IDic
 
     #region ISerializationCallbackReceiver
 
-    [UnityEngine.SerializeField()]
+    [SerializeField()]
     private TKey[] _keys;
-    [UnityEngine.SerializeField()]
+    [SerializeField()]
     private TValue[] _values;
 
-    void UnityEngine.ISerializationCallbackReceiver.OnAfterDeserialize()
+    void ISerializationCallbackReceiver.OnAfterDeserialize()
     {
         if (_keys != null && _values != null)
         {
@@ -191,7 +191,7 @@ public class SerializableDictionaryBase<TKey, TValue> : DrawableDictionary, IDic
         _values = null;
     }
 
-    void UnityEngine.ISerializationCallbackReceiver.OnBeforeSerialize()
+    void ISerializationCallbackReceiver.OnBeforeSerialize()
     {
         if (_dict == null || _dict.Count == 0)
         {
@@ -629,10 +629,8 @@ public class ConditionalHideDrawer : PropertyDrawer
             Debug.LogError($"Field '{hideAttribute.ConditionField}' not found in {property.serializedObject.targetObject.GetType().Name}.");
             return;
         }
-        else
-        {
-            Debug.Log($"Field '{hideAttribute.ConditionField}' found. Value: {conditionProperty.boolValue}");
-        }
+
+        Debug.Log($"Field '{hideAttribute.ConditionField}' found. Value: {conditionProperty.boolValue}");
     }
 
     // Determina l'altezza della proprietà (utile per nascondere completamente la riga nell'Inspector)
