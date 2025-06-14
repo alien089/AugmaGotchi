@@ -23,6 +23,7 @@ namespace Managers
         void Start()
         {
             GameManager.Instance.EventManager.Register(AugmaEventList.SPAWN_AUGMA, SpawnAugma);
+            GameManager.Instance.EventManager.Register(FoodEventList.FOOD_GIVEN, IncrementStatsEvent);
         }
         
         void Update()
@@ -52,6 +53,20 @@ namespace Managers
             if (_fCurrentValuesStats[statType] > 0)
             {
                 _fCurrentValuesStats[statType] -= decrementValue * Time.deltaTime;
+                if (_fCurrentValuesStats[statType] < 0) _fCurrentValuesStats[statType] = 0;
+            }
+        }
+
+        private void IncrementStatsEvent(object[] param)
+        {
+            IncrementStats((Stats)param[0], (float)param[1]);
+        }
+
+        private void IncrementStats(Stats statType, float incrementValue)
+        {
+            if (_fCurrentValuesStats[statType] < _fMaxValuesStats[statType])
+            {
+                _fCurrentValuesStats[statType] += incrementValue;
                 if (_fCurrentValuesStats[statType] < 0) _fCurrentValuesStats[statType] = 0;
             }
         }

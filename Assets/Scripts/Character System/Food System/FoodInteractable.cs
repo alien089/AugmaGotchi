@@ -10,6 +10,10 @@ namespace Character_System.Food_System
     [RequireComponent(typeof(MeshCollider))]
     public class FoodInteractable : MonoBehaviour
     {
+        [SerializeField] private float _fIncrementValue;
+
+        public float FIncrementValue { get => _fIncrementValue; }
+
         private Grabbable _xGrabbable;
         private HandGrabInteractable _xHandGrabInteractable; 
         private GrabInteractable _xGrabInteractable;
@@ -42,7 +46,6 @@ namespace Character_System.Food_System
             GameManager.Instance.EventManager.TriggerEvent(FoodEventList.FOOD_UNGRABBED);
             Destroy(gameObject);
         }
-
         
         private void OnDestroy()
         {

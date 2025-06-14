@@ -6,6 +6,13 @@ namespace Character_System.StateMachine
 {
     public class AugmaStateManager : StatesMachine<AugmaStates>
     {
+        public AugmaController xAugmaController;
+        
+        public AugmaStateManager(AugmaController controller) : base()
+        {
+            xAugmaController = controller;
+        }
+        
         protected override void InitStates()
         {
             StatesList.Add(AugmaStates.IDLE, new AugmaIdleState(AugmaStates.IDLE, this));

@@ -40,6 +40,11 @@ public static class FoodEventList
     /// params: none 
     /// </summary>
     public static string FOOD_UNGRABBED = "FOOD_UNGRABBED"; 
+    
+    /// <summary>
+    /// params: Stats statType, float incrementValue 
+    /// </summary>
+    public static string FOOD_GIVEN = "FOOD_GIVEN"; 
 }
 
 public static class ToyEventList 
@@ -58,4 +63,9 @@ public static class ToyEventList
     /// params: none 
     /// </summary>
     public static string TOY_UNGRABBED = "TOY_UNGRABBED"; 
+    
+    /// <summary>
+    /// params: Stats statType, float incrementValue
+    /// </summary>
+    public static string TOY_THROWN = "TOY_THROWN"; 
 }

@@ -1,29 +1,33 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Character_System.Food_System;
+using Enums;
+using Managers;
 using UnityEngine;
 
-public class FoodComponent : MonoBehaviour
+namespace Character_System.Food_System
 {
-    private SphereCollider _xSphereCollider; 
+    [RequireComponent(typeof(SphereCollider))]
+    public class FoodComponent : MonoBehaviour
+    {
+        private SphereCollider _xSphereCollider; 
     
-    void Start()
-    {
-        _xSphereCollider = gameObject.GetComponent<SphereCollider>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnCollisionEnter(Collision other)
-    {
-        if (TryGetComponent(out FoodInteractable hinge))
+        void Start()
         {
-            
+            _xSphereCollider = gameObject.GetComponent<SphereCollider>();
+            _xSphereCollider.isTrigger = true;
+        }
+
+        public void EnableComponent(bool value)
+        {
+            _xSphereCollider.enabled = value;
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.TryGetComponent(out FoodInteractable interactable))
+            {
+                GameManager.Instance.EventManager.TriggerEvent(FoodEventList.FOOD_GIVEN, Stats.FOOD, interactable.FIncrementValue);
+                Destroy(interactable.gameObject);
+            }
         }
     }
 }
