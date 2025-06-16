@@ -25,20 +25,25 @@ public class UIObjectsManager : MonoBehaviour
         
         GameManager.Instance.EventManager.Register(FoodEventList.FOOD_GRABBED, FoodGrabbed);
         GameManager.Instance.EventManager.Register(ToyEventList.TOY_GRABBED, ToyGrabbed);
+        GameManager.Instance.EventManager.Register(CaressEventList.WANT_CARESS, WantCaress);
         
         if (_xToyPrefab == null || _xToyPosition == null) return;
         SpawnItem(ref _xToyInstance, _xToyPrefab, _xToyPosition);
         
         GameManager.Instance.EventManager.Register(FoodEventList.FOOD_UNGRABBED, FoodUngrabbed);
         GameManager.Instance.EventManager.Register(ToyEventList.TOY_UNGRABBED, ToyUngrabbed);
+        GameManager.Instance.EventManager.Register(CaressEventList.NOT_WANT_CARESS, NotWantCaress);
     }
     
     private void OnApplicationQuit()
     {
         GameManager.Instance.EventManager.Unregister(FoodEventList.FOOD_GRABBED, FoodGrabbed);
         GameManager.Instance.EventManager.Unregister(ToyEventList.TOY_GRABBED, ToyGrabbed);
+        GameManager.Instance.EventManager.Unregister(CaressEventList.WANT_CARESS, WantCaress);
+        
         GameManager.Instance.EventManager.Unregister(FoodEventList.FOOD_UNGRABBED, FoodUngrabbed);
         GameManager.Instance.EventManager.Unregister(ToyEventList.TOY_UNGRABBED, ToyUngrabbed);
+        GameManager.Instance.EventManager.Unregister(CaressEventList.NOT_WANT_CARESS, NotWantCaress);
     }
     
     private void SpawnItem(ref GameObject itemInstance, GameObject item, Transform position)
@@ -63,6 +68,19 @@ public class UIObjectsManager : MonoBehaviour
 
     #endregion
 
+    #region Caress System
+
+    private void WantCaress(object[] param)
+    {
+        GameManager.Instance.EventManager.TriggerEvent(AugmaEventList.CHANGE_AUGMA_STATE, AugmaStates.CARESS);
+    }
+    
+    private void NotWantCaress(object[] param)
+    {
+        GameManager.Instance.EventManager.TriggerEvent(AugmaEventList.CHANGE_AUGMA_STATE, AugmaStates.IDLE);
+    }
+
+    #endregion
 
     #region Toy System
 

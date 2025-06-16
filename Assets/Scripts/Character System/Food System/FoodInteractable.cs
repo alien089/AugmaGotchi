@@ -56,7 +56,6 @@ namespace Character_System.Food_System
         {
             if (!_bIsGrabbed) return;
             _bIsGrabbed = false;
-            Debug.Log("test");
             GameManager.Instance.EventManager.TriggerEvent(FoodEventList.FOOD_UNGRABBED);
             Destroy(gameObject);
         }

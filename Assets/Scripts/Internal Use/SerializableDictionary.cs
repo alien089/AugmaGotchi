@@ -220,7 +220,6 @@ public class SerializableDictionaryBase<TKey, TValue> : DrawableDictionary, IDic
 
 namespace com.spacepuppyeditor.Collections
 {
-
     [CustomPropertyDrawer(typeof(DrawableDictionary), true)]
     public class DictionaryPropertyDrawer : PropertyDrawer
     {

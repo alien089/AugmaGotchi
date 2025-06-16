@@ -24,27 +24,40 @@ public static class AugmaEventList
     public static string CHANGE_AUGMA_STATE = "CHANGE_AUGMA_STATE";
 }
 
-public static class FoodEventList 
+public static class CaressEventList
 {
     /// <summary>
     /// params: none 
     /// </summary>
-    public static string RESPAWN_FOOD = "RESPAWN_FOOD"; 
-    
+    public static string WANT_CARESS = "WANT_CARESS";
+
     /// <summary>
     /// params: none 
     /// </summary>
-    public static string FOOD_GRABBED = "FOOD_GRABBED"; 
-    
-    /// <summary>
-    /// params: none 
-    /// </summary>
-    public static string FOOD_UNGRABBED = "FOOD_UNGRABBED"; 
-    
+    public static string NOT_WANT_CARESS = "NOT_WANT_CARESS";
+}
+
+public static class FoodEventList
+{
     /// <summary>
     /// params: Stats statType, float incrementValue 
     /// </summary>
-    public static string FOOD_GIVEN = "FOOD_GIVEN"; 
+    public static string FOOD_GIVEN = "FOOD_GIVEN";
+
+    /// <summary>
+    /// params: none 
+    /// </summary>
+    public static string RESPAWN_FOOD = "RESPAWN_FOOD";
+
+    /// <summary>
+    /// params: none 
+    /// </summary>
+    public static string FOOD_GRABBED = "FOOD_GRABBED";
+
+    /// <summary>
+    /// params: none 
+    /// </summary>
+    public static string FOOD_UNGRABBED = "FOOD_UNGRABBED";
 }
 
 public static class ToyEventList 
