@@ -21,6 +21,8 @@ namespace Character_System.Food_System
         
         private MeshCollider _xCollider;
         
+        private bool _bIsGrabbed = false;
+        
         private void Start()
         {
             _xGrabbable = GetComponentInChildren<Grabbable>();
@@ -35,14 +37,26 @@ namespace Character_System.Food_System
             _xHandGrabInteractable.WhenSelectingInteractorViewAdded += OnGrabEnter;
             _xHandGrabInteractable.WhenSelectingInteractorViewRemoved += OnGrabExit;
         }
+        
+        private void OnApplicationQuit()
+        {
+            _xHandGrabInteractable.WhenSelectingInteractorViewAdded -= OnGrabEnter;
+            _xHandGrabInteractable.WhenSelectingInteractorViewRemoved -= OnGrabExit;
+        }
 
         private void OnGrabEnter(IInteractorView interactor)
         {
+            if (_bIsGrabbed) return;
+            _bIsGrabbed = true;
+            
             GameManager.Instance.EventManager.TriggerEvent(FoodEventList.FOOD_GRABBED);
         }
         
         private void OnGrabExit(IInteractorView interactor)
         {
+            if (!_bIsGrabbed) return;
+            _bIsGrabbed = false;
+            Debug.Log("test");
             GameManager.Instance.EventManager.TriggerEvent(FoodEventList.FOOD_UNGRABBED);
             Destroy(gameObject);
         }

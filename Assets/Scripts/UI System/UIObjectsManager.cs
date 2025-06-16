@@ -33,6 +33,14 @@ public class UIObjectsManager : MonoBehaviour
         GameManager.Instance.EventManager.Register(ToyEventList.TOY_UNGRABBED, ToyUngrabbed);
     }
     
+    private void OnApplicationQuit()
+    {
+        GameManager.Instance.EventManager.Unregister(FoodEventList.FOOD_GRABBED, FoodGrabbed);
+        GameManager.Instance.EventManager.Unregister(ToyEventList.TOY_GRABBED, ToyGrabbed);
+        GameManager.Instance.EventManager.Unregister(FoodEventList.FOOD_UNGRABBED, FoodUngrabbed);
+        GameManager.Instance.EventManager.Unregister(ToyEventList.TOY_UNGRABBED, ToyUngrabbed);
+    }
+    
     private void SpawnItem(ref GameObject itemInstance, GameObject item, Transform position)
     {
         itemInstance = Instantiate(item, position);

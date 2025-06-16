@@ -40,5 +40,10 @@ namespace UI_System
             _xAugma = (AugmaManager)param[0];
             GetComponent<Canvas>().enabled = true;
         }
+        
+        private void OnApplicationQuit()
+        {
+            GameManager.Instance.EventManager.Unregister(AugmaEventList.GIVE_AUGMA_TO_UI, GetAugma);
+        }
     }
 }

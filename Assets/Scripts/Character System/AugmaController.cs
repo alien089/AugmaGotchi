@@ -76,5 +76,10 @@ namespace Character_System
             _xAugmaStateManager.ChangeState(AugmaStates.IDLE);
             return false;
         }
+        
+        private void OnApplicationQuit()
+        {
+            GameManager.Instance.EventManager.Unregister(AugmaEventList.CHANGE_AUGMA_STATE, SetFlag);
+        }
     }
 }

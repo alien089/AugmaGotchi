@@ -26,6 +26,12 @@ namespace Managers
             GameManager.Instance.EventManager.Register(FoodEventList.FOOD_GIVEN, IncrementStatsEvent);
         }
         
+        private void OnApplicationQuit()
+        {
+            GameManager.Instance.EventManager.Unregister(AugmaEventList.SPAWN_AUGMA, SpawnAugma);
+            GameManager.Instance.EventManager.Unregister(FoodEventList.FOOD_GIVEN, IncrementStatsEvent);
+        }
+        
         void Update()
         {
             if (!_xAugma) return;
