@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7113515132744674191}
   - component: {fileID: 284653194362286542}
   - component: {fileID: 3296068073718949442}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CaressDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.2
+  m_Radius: 0.35
   m_Center: {x: 0, y: 0.41, z: 0}
 --- !u!114 &3296068073718949442
 MonoBehaviour:
@@ -4905,7 +4905,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7466065456794092673}
-  - component: {fileID: 8643065099930837886}
+  - component: {fileID: 4960672344058188338}
+  - component: {fileID: 830879356265789588}
   m_Layer: 0
   m_Name: AugmaCaressComponent
   m_TagString: Untagged
@@ -4930,7 +4931,19 @@ Transform:
   - {fileID: 7113515132744674191}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &8643065099930837886
+--- !u!114 &4960672344058188338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2553401241998586229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2635cef1e6c6227408dbc059334cab10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!135 &830879356265789588
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4949,5 +4962,5 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.1
-  m_Center: {x: 0, y: 0.41, z: 0}
+  m_Radius: 0.07
+  m_Center: {x: 0, y: 0.43, z: 0}

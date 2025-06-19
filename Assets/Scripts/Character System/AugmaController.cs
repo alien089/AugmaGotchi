@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Character_System.Caress_System;
 using Character_System.Food_System;
 using Character_System.StateMachine;
 using Enums;
@@ -11,6 +12,11 @@ namespace Character_System
 {
     public class AugmaController : MonoBehaviour
     {
+        private bool _bOneTime = true;
+        
+        [SerializeField] private GameObject _xFoodComponentPrefab;
+        [SerializeField] private GameObject _xCaressComponentPrefab;
+        
         private AugmaStateManager _xAugmaStateManager;
         
         private Dictionary<AugmaStates, bool> _mStateFlags = new Dictionary<AugmaStates, bool>();
@@ -19,20 +25,27 @@ namespace Character_System
         private bool _bIsPokingHand = false;
         
         private FoodComponent _xFoodComponent;
+        private CaressComponent _xCaressComponent;
+        
         public FoodComponent XFoodComponent { get => _xFoodComponent; }
+        public CaressComponent XCaressComponent { get => _xCaressComponent; }
 
         private void Start()
         {
             _xAugmaStateManager = new AugmaStateManager(this);
             _xAugmaStateManager.CurrentState = _xAugmaStateManager.StatesList[AugmaStates.IDLE];
             
-            _xFoodComponent = GetComponentInChildren<FoodComponent>();
-            
             GameManager.Instance.EventManager.Register(AugmaEventList.CHANGE_AUGMA_STATE, SetFlag);
             
             _mStateFlags.Add(AugmaStates.JOY, true);
             _mStateFlags.Add(AugmaStates.FOOD, false);
             _mStateFlags.Add(AugmaStates.CARESS, true);
+
+            Instantiate(_xFoodComponentPrefab, Vector3.zero, Quaternion.identity).transform.SetParent(transform);
+            Instantiate(_xCaressComponentPrefab, Vector3.zero, Quaternion.identity).transform.SetParent(transform);
+            
+            _xFoodComponent = GetComponentInChildren<FoodComponent>();
+            _xCaressComponent = GetComponentInChildren<CaressComponent>();
         }
 
         private void Update()
@@ -48,6 +61,7 @@ namespace Character_System
             _mStateFlags[AugmaStates.JOY] = false;
             _mStateFlags[AugmaStates.FOOD] = false;
             _mStateFlags[AugmaStates.CARESS] = false;
+            _mStateFlags[AugmaStates.IDLE] = false;
 
             _mStateFlags[state] = true;
         }
@@ -69,7 +83,7 @@ namespace Character_System
             //Change state to Caress State
             if (_mStateFlags[AugmaStates.CARESS])
             {
-                _xAugmaStateManager.ChangeState(AugmaStates.FOOD);
+                _xAugmaStateManager.ChangeState(AugmaStates.CARESS);
                 return true;
             }
             //Change state to Idle State if every bools are false
