@@ -41,8 +41,8 @@ namespace Character_System
             _mStateFlags.Add(AugmaStates.FOOD, false);
             _mStateFlags.Add(AugmaStates.CARESS, true);
 
-            Instantiate(_xFoodComponentPrefab, Vector3.zero, Quaternion.identity).transform.SetParent(transform);
-            Instantiate(_xCaressComponentPrefab, Vector3.zero, Quaternion.identity).transform.SetParent(transform);
+            Instantiate(_xFoodComponentPrefab, transform.position, Quaternion.identity).transform.SetParent(transform);
+            Instantiate(_xCaressComponentPrefab, transform.position, Quaternion.identity).transform.SetParent(transform);
             
             _xFoodComponent = GetComponentInChildren<FoodComponent>();
             _xCaressComponent = GetComponentInChildren<CaressComponent>();
