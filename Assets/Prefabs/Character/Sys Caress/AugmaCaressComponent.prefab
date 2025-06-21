@@ -4943,4 +4943,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fDeadZone: 1.709
-  _fIncrementValue: 0.05
+  _fIncrementValue: 0.035

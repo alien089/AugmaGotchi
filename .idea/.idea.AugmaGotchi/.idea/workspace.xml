@@ -7,11 +7,13 @@
     <list default="true" id="d7b1ed3e-decc-455b-a3ef-083600f08c3a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AugmaGotchi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AugmaGotchi/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Oculus/OculusProjectConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Oculus/OculusProjectConfig.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Character/Oppy/models/Oppy_Urig.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Character/Oppy/models/Oppy_Urig.fbx.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Character/Sys Caress/AugmaCaressComponent.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Character/Sys Caress/AugmaCaressComponent.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/OVRPlatformToolSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/OVRPlatformToolSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Internal Use/SerializableDictionary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Internal Use/SerializableDictionary.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/AugmaManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/AugmaManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/OVRBuildConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/OVRBuildConfig.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/OVRBuildConfig.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/OVRBuildConfig.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XR/Settings/OpenXR Package Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XR/Settings/OpenXR Package Settings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +75,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor &amp; Play">
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.62f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath &quot;C:\Users\Gabriel\Documents\AProjects\Exams\Specialization Project\AugmaGotchi&quot; -debugCodeOptimization" />
@@ -92,7 +94,7 @@
     </configuration>
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
-      <option name="listenPortForConnections" value="true" />
+      <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
@@ -103,13 +105,15 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="31728">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="31728" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
-        <list />
+        <list>
+          <MonoRuntime />
+        </list>
       </option>
       <option name="selectedOptions">
         <list />
@@ -154,6 +158,7 @@
       <workItem from="1750509777155" duration="5003000" />
       <workItem from="1750521229614" duration="2385000" />
       <workItem from="1750524110698" duration="5512000" />
+      <workItem from="1750535949890" duration="1702000" />
     </task>
     <servers />
   </component>
