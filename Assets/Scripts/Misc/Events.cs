@@ -25,7 +25,12 @@ public static class AugmaEventList
 }
 
 public static class CaressEventList
-{
+{    
+    /// <summary>
+    /// params: Stats statType, float incrementValue 
+    /// </summary>
+    public static string CARESS_GIVEN = "CARESS_GIVEN";
+    
     /// <summary>
     /// params: none 
     /// </summary>

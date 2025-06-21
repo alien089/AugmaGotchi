@@ -24,12 +24,16 @@ namespace Managers
         {
             GameManager.Instance.EventManager.Register(AugmaEventList.SPAWN_AUGMA, SpawnAugma);
             GameManager.Instance.EventManager.Register(FoodEventList.FOOD_GIVEN, IncrementStatsEvent);
+            
+            GameManager.Instance.EventManager.Register(CaressEventList.CARESS_GIVEN, IncrementStatsEvent);
         }
         
         private void OnApplicationQuit()
         {
             GameManager.Instance.EventManager.Unregister(AugmaEventList.SPAWN_AUGMA, SpawnAugma);
             GameManager.Instance.EventManager.Unregister(FoodEventList.FOOD_GIVEN, IncrementStatsEvent);
+            
+            GameManager.Instance.EventManager.Unregister(CaressEventList.CARESS_GIVEN, IncrementStatsEvent);
         }
         
         void Update()

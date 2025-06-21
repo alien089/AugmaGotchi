@@ -1,13 +1,19 @@
 ﻿using System;
+using Enums;
 using Internal_Use;
+using Managers;
 using Oculus.Interaction;
 using Oculus.Interaction.HandGrab;
+using Oculus.Interaction.Input;
 using UnityEngine;
 
 namespace Character_System.Caress_System
 {
     public class CaressComponent : MonoBehaviour
     {
+        [SerializeField, Range(1, 2)] private float _fDeadZone;
+        [SerializeField] private float _fIncrementValue;
+        
         private HandGrabInteractable _xHandGrabInteractable;
         private bool _bIsPoking = false;
         private GameObject _xInteractorHand;
@@ -46,18 +52,27 @@ namespace Character_System.Caress_System
             if (_xInteractorHand != null) return;
             _bIsPoking = true;
             HandGrabInteractor grabInteractor = (HandGrabInteractor)interactor.Data;
-            _xInteractorHand = grabInteractor.gameObject.transform.root.gameObject.GetComponentInChildren<IdentificatorAnchor>().gameObject;
+            if (grabInteractor.Hand.Handedness == Handedness.Right)
+                _xInteractorHand = grabInteractor.gameObject.transform.root.GetComponentInChildren<IdentificatorAnchorRight>().gameObject;
+            else
+                _xInteractorHand = grabInteractor.gameObject.transform.root.GetComponentInChildren<IdentificatorAnchorLeft>().gameObject;
             _vHandPosition = _xInteractorHand.transform.position;
         }
 
         private void OnPokeContinuous(GameObject hand)
         {
             Vector3 handPosition = hand.transform.position;
-            if (handPosition != _vHandPosition)
+            if (Vector3.Distance(handPosition, _vHandPosition) > _fDeadZone / 10000)
             {
                 if (!_xParticleSystem.isPlaying)
                     _xParticleSystem.Play();
                 _vHandPosition = handPosition;
+                GameManager.Instance.EventManager.TriggerEvent(CaressEventList.CARESS_GIVEN, Stats.CARESS, _fIncrementValue / 10);
+            }
+            else
+            {
+                if (_xParticleSystem.isPlaying)
+                    _xParticleSystem.Stop();
             }
         }
         

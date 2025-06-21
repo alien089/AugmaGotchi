@@ -4942,3 +4942,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2635cef1e6c6227408dbc059334cab10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _fDeadZone: 1.709
+  _fIncrementValue: 5

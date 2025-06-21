@@ -2,7 +2,7 @@
 
 namespace Internal_Use
 {
-    public class IdentificatorAnchor : MonoBehaviour
+    public class IdentificatorAnchorRight : MonoBehaviour
     {
         
     }
