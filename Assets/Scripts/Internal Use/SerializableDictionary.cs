@@ -1,7 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
-using UnityEditor;
 using UnityEngine;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public abstract class DrawableDictionary
 {
@@ -218,6 +220,7 @@ public class SerializableDictionaryBase<TKey, TValue> : DrawableDictionary, IDic
 
 }
 
+#if UNITY_EDITOR
 namespace com.spacepuppyeditor.Collections
 {
     [CustomPropertyDrawer(typeof(DrawableDictionary), true)]
@@ -590,7 +593,8 @@ namespace com.spacepuppyeditor.Collections
 
     }
 }
-
+#endif
+#if UNITY_EDITOR
 // Questo attributo personalizzato permette di specificare una condizione per mostrare/nascondere una variabile
 public class ConditionalHideAttribute : PropertyAttribute
 {
@@ -602,7 +606,8 @@ public class ConditionalHideAttribute : PropertyAttribute
         ConditionField = conditionField;
     }
 }
-
+#endif
+#if UNITY_EDITOR
 // Personalizzazione dell'editor per gestire il nostro attributo ConditionalHideAttribute
 [CustomPropertyDrawer(typeof(ConditionalHideAttribute))]
 public class ConditionalHideDrawer : PropertyDrawer
@@ -651,3 +656,4 @@ public class ConditionalHideDrawer : PropertyDrawer
         return 0f;
     }
 }
+#endif

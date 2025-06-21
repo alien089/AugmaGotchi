@@ -77,7 +77,7 @@ namespace Managers
             if (_fCurrentValuesStats[statType] < _fMaxValuesStats[statType])
             {
                 _fCurrentValuesStats[statType] += incrementValue;
-                if (_fCurrentValuesStats[statType] < 0) _fCurrentValuesStats[statType] = 0;
+                if (_fCurrentValuesStats[statType] > _fMaxValuesStats[statType]) _fCurrentValuesStats[statType] = _fMaxValuesStats[statType];
             }
         }
     }
