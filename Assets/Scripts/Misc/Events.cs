@@ -30,6 +30,11 @@ public static class CaressEventList
     /// params: Stats statType, float incrementValue 
     /// </summary>
     public static string CARESS_GIVEN = "CARESS_GIVEN";
+
+    /// <summary>
+    /// params: bool value 
+    /// </summary>
+    public static string AUDIO_CARESS = "AUDIO_CARESS";
     
     /// <summary>
     /// params: none 
@@ -40,6 +45,7 @@ public static class CaressEventList
     /// params: none 
     /// </summary>
     public static string NOT_WANT_CARESS = "NOT_WANT_CARESS";
+    
 }
 
 public static class FoodEventList

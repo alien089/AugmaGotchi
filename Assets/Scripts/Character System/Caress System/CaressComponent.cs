@@ -62,17 +62,20 @@ namespace Character_System.Caress_System
         private void OnPokeContinuous(GameObject hand)
         {
             Vector3 handPosition = hand.transform.position;
-            if (Vector3.Distance(handPosition, _vHandPosition) > _fDeadZone / 10000)
+            
+            if (Vector3.Distance(handPosition, _vHandPosition) > _fDeadZone / 1000)
             {
                 if (!_xParticleSystem.isPlaying)
                     _xParticleSystem.Play();
                 _vHandPosition = handPosition;
                 GameManager.Instance.EventManager.TriggerEvent(CaressEventList.CARESS_GIVEN, Stats.CARESS, _fIncrementValue / 10);
+                GameManager.Instance.EventManager.TriggerEvent(CaressEventList.AUDIO_CARESS, true);
             }
             else
             {
                 if (_xParticleSystem.isPlaying)
                     _xParticleSystem.Stop();
+                GameManager.Instance.EventManager.TriggerEvent(CaressEventList.AUDIO_CARESS, false);
             }
         }
         
@@ -83,6 +86,7 @@ namespace Character_System.Caress_System
             _xInteractorHand = null;
             _xParticleSystem.Stop();
             _vHandPosition = Vector3.zero;
+            GameManager.Instance.EventManager.TriggerEvent(CaressEventList.AUDIO_CARESS, false);
         }
     }
 }

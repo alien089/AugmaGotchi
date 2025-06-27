@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e925c985dd908a479984c715f91be3d, type: 3}
+  m_Name: ScratchPackage
+  m_EditorClassIdentifier: 
+  AudioClips:
+  - {fileID: 8300000, guid: c984d282ee0d3284985e881f9f0f7858, type: 3}
+  - {fileID: 8300000, guid: b279314ce69e28f418afa90060ef17b2, type: 3}
+  - {fileID: 8300000, guid: e28cea0497ca77741bdfba3ad9232076, type: 3}
+  - {fileID: 8300000, guid: 1e037bdcd6f786d49aa9f66140e130ac, type: 3}
+  - {fileID: 8300000, guid: 79fa271cd0c4e4e40ab700161bc9b02f, type: 3}
+  - {fileID: 8300000, guid: 58c1c107f30b73a46963be7d45e154c2, type: 3}
+  - {fileID: 8300000, guid: 0da37b792905e644b9a3792ae2e1b1c6, type: 3}
+  - {fileID: 8300000, guid: 7dda1ce4711bad848bb9a9ec89d54c59, type: 3}
+  - {fileID: 8300000, guid: 5e559e048f54ebf4287a61613140372c, type: 3}
+  - {fileID: 8300000, guid: d22e7f15d5638d34eb81627c6045f304, type: 3}
+  - {fileID: 8300000, guid: 7cce9842f2707b9458d85921a1be6239, type: 3}

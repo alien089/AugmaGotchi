@@ -8,13 +8,16 @@ namespace Managers
     {
         private EventManager _xEventManager = Factory.CreateEventManager();
         private SaveManager _xSaveManager; 
+        private AudioManager _xAudioManager; 
 
         public EventManager EventManager { get => _xEventManager; }
         public SaveManager SaveManager { get => _xSaveManager; }
+        public AudioManager AudioManager { get => _xAudioManager; }
 
         private void Start()
         {
             _xSaveManager = GetComponentInChildren<SaveManager>();
+            _xAudioManager = GetComponentInChildren<AudioManager>();
         }
     }
 }

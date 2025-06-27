@@ -1,5 +1,64 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &89825359232216933
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1877424749076649470}
+  - component: {fileID: 4901850945246195732}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1877424749076649470
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89825359232216933}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9177436397965404106}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4901850945246195732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89825359232216933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ccd87bccc33b2f44a42f84ecce4d3c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _xBitePackage: {fileID: 11400000, guid: 5a1ae84c63bdfc54eba70861750a7129, type: 2}
+  _xHappyPackage: {fileID: 11400000, guid: c3cdc3daf233f1243bd4a24be50b972e, type: 2}
+  _xHungerPackage: {fileID: 11400000, guid: 1f1f1be1b8bf6fd4db7ade546f2eb3b1, type: 2}
+  _xPurrPackage: {fileID: 11400000, guid: de9bb57c767a60746816ed64066e57fb, type: 2}
+  _xSadPackage: {fileID: 11400000, guid: 256418493e24da04bb55481518ff954f, type: 2}
+  _xScratchPackage: {fileID: 11400000, guid: 655087650dc82414c9f7278f8d2b04a5, type: 2}
+  AudioEvents:
+    _keys: 000000000100000002000000030000000400000005000000
+    _values:
+    - BITE
+    - HAPPY
+    - HUNGER
+    - PURR
+    - SAD
+    - SCRATCH
 --- !u!1 &2186655615903818244
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,6 +151,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4533306130050619123}
+  - {fileID: 1877424749076649470}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &884486521186633854

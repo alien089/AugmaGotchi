@@ -12,17 +12,12 @@ namespace Character_System
 {
     public class AugmaController : MonoBehaviour
     {
-        private bool _bOneTime = true;
-        
         [SerializeField] private GameObject _xFoodComponentPrefab;
         [SerializeField] private GameObject _xCaressComponentPrefab;
         
         private AugmaStateManager _xAugmaStateManager;
         
         private Dictionary<AugmaStates, bool> _mStateFlags = new Dictionary<AugmaStates, bool>();
-        private bool _bIsGrabbingToy = false;
-        private bool _bIsGrabbingFood = false;
-        private bool _bIsPokingHand = false;
         
         private FoodComponent _xFoodComponent;
         private CaressComponent _xCaressComponent;
