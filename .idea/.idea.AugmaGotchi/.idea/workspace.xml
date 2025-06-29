@@ -9,83 +9,11 @@
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Character/Augma.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Character/Augma.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Character/Sys Caress/AugmaCaressComponent.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Character/Sys Caress/AugmaCaressComponent.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Character/Sys Food/AugmaFoodComponent.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Character/Sys Food/AugmaFoodComponent.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GameManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GameManager.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/BItes_01.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/BItes_01.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/BItes_02.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/BItes_02.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/BItes_03.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/BItes_03.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/BItes_04.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/BItes_04.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/BItes_05.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/BItes_05.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/BItes_06.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/BItes_06.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Happy_Noises_01.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Happy_Noises_01.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Happy_Noises_02.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Happy_Noises_02.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Happy_Noises_03.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Happy_Noises_03.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Happy_Noises_04.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Happy_Noises_04.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Happy_Noises_05.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Happy_Noises_05.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Hunger_01.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Hunger_01.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Hunger_02.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Hunger_02.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Hunger_03.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Hunger_03.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Purrs_01.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Purrs_01.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Purrs_02.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Purrs_02.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Purrs_03.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Purrs_03.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Purrs_04.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Purrs_04.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Purrs_Full.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Purrs_Full.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Sad_Noises_01.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Sad_Noises_01.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Sad_Noises_02.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Sad_Noises_02.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Sad_Noises_03.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Sad_Noises_03.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Sad_Noises_04.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Sad_Noises_04.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Sad_Noises_05.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Sad_Noises_05.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Scratch_01.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Scratch_01.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Scratch_02.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Scratch_02.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Scratch_03.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Scratch_03.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Scratch_04.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Scratch_04.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Scratch_05.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Scratch_05.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Scratch_06.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Scratch_06.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Scratch_07.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Scratch_07.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Scratch_08.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Scratch_08.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Scratch_09.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Scratch_09.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Scratch_10.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Scratch_10.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Scratch_11.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Scratch_11.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Scratch_Full.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Scratch_Full.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/scn_PlayScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/scn_PlayScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/AugmaController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/AugmaController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/Caress System/CaressComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/Caress System/CaressComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/Audio/AudioComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/Audio/AudioComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/Audio/AudioComponentContinuous.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/Audio/AudioComponentContinuous.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/Audio/AudioComponentSpot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/Audio/AudioComponentSpot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/AudioManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/AugmaManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/AugmaManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Misc/Events.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Misc/Events.cs" afterDir="false" />
     </list>
@@ -180,10 +108,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="15708">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="21964">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="15708" />
+      <option name="pid" value="21964" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
         <list>
@@ -236,6 +164,8 @@
       <workItem from="1750535949890" duration="1702000" />
       <workItem from="1750940605389" duration="9385000" />
       <workItem from="1751027301462" duration="12304000" />
+      <workItem from="1751047887070" duration="1110000" />
+      <workItem from="1751194911339" duration="4257000" />
     </task>
     <servers />
   </component>

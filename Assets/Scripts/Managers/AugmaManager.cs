@@ -19,6 +19,8 @@ namespace Managers
         
         private GameObject _xAugma;
         
+        private bool _bIsHunger = false;
+        
         // Start is called before the first frame update
         void Start()
         {
@@ -42,6 +44,18 @@ namespace Managers
             
             DecrementStats(Stats.JOY, _fDecrementValue[Stats.JOY]);
             DecrementStats(Stats.FOOD, _fDecrementValue[Stats.FOOD]);
+
+            if (FCurrentValuesStats[Stats.FOOD] <= FMaxValuesStats[Stats.FOOD] / 3 && _bIsHunger == false) 
+            {
+                GameManager.Instance.EventManager.TriggerEvent(FoodEventList.IS_HUNGER, true);
+                _bIsHunger = true;
+            }
+            else if (FCurrentValuesStats[Stats.FOOD] > FMaxValuesStats[Stats.FOOD] / 3)
+            {
+                GameManager.Instance.EventManager.TriggerEvent(FoodEventList.IS_HUNGER, false);
+                _bIsHunger = false;
+            }
+            
             DecrementStats(Stats.CARESS, _fDecrementValue[Stats.CARESS]);
         }
 
@@ -65,11 +79,24 @@ namespace Managers
                 _fCurrentValuesStats[statType] -= decrementValue * Time.deltaTime;
                 if (_fCurrentValuesStats[statType] < 0) _fCurrentValuesStats[statType] = 0;
             }
+            
+            if (_fCurrentValuesStats[statType] == 1 * (_fMaxValuesStats[statType] / 3) ||
+                _fCurrentValuesStats[statType] == 2 * (_fMaxValuesStats[statType] / 3))
+            {
+                GameManager.Instance.EventManager.TriggerEvent(AugmaEventList.SAD_AUDIO);
+            }
         }
 
         private void IncrementStatsEvent(object[] param)
         {
             IncrementStats((Stats)param[0], (float)param[1]);
+
+            if (_fCurrentValuesStats[(Stats)param[0]] <= 1 * (_fMaxValuesStats[(Stats)param[0]] / 3) ||
+                _fCurrentValuesStats[(Stats)param[0]] <= 2 * (_fMaxValuesStats[(Stats)param[0]] / 3) || 
+                Mathf.Approximately(_fCurrentValuesStats[(Stats)param[0]], _fMaxValuesStats[(Stats)param[0]]))
+            {
+                GameManager.Instance.EventManager.TriggerEvent(AugmaEventList.HAPPY_AUDIO);
+            }
         }
 
         private void IncrementStats(Stats statType, float incrementValue)

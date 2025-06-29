@@ -24,8 +24,11 @@ namespace Managers
         void Start()
         {
             GameManager.Instance.EventManager.Register(FoodEventList.FOOD_GIVEN, PlayBiteSound);
+            GameManager.Instance.EventManager.Register(FoodEventList.IS_HUNGER, PlayHungerSound);
             GameManager.Instance.EventManager.Register(CaressEventList.AUDIO_CARESS, PlayPurrSound);
             GameManager.Instance.EventManager.Register(CaressEventList.AUDIO_CARESS, PlayScratchSound);
+            GameManager.Instance.EventManager.Register(AugmaEventList.SAD_AUDIO, PlaySadSound);
+            GameManager.Instance.EventManager.Register(AugmaEventList.HAPPY_AUDIO, PlayHappySound);
         }
         
         private void PlayBiteSound(object[] param)
@@ -37,23 +40,17 @@ namespace Managers
         
         private void PlayPurrSound(object[] param)
         {
-            int rnd = Random.Range(0, _xPurrPackage.AudioClips.Length);
-
-            GameManager.Instance.EventManager.TriggerEvent(AudioEvents[AudioType.PURR], (bool)param[0], _xPurrPackage.AudioClips[rnd]);
+            GameManager.Instance.EventManager.TriggerEvent(AudioEvents[AudioType.PURR], (bool)param[0], _xPurrPackage);
         } 
         
         private void PlayScratchSound(object[] param)
         {
-            int rnd = Random.Range(0, _xScratchPackage.AudioClips.Length);
-            
-            GameManager.Instance.EventManager.TriggerEvent(AudioEvents[AudioType.SCRATCH], (bool)param[0], _xScratchPackage.AudioClips[rnd]);
+            GameManager.Instance.EventManager.TriggerEvent(AudioEvents[AudioType.SCRATCH], (bool)param[0], _xScratchPackage);
         } 
         
         private void PlayHungerSound(object[] param)
         {
-            int rnd = Random.Range(0, _xHungerPackage.AudioClips.Length);
-
-            GameManager.Instance.EventManager.TriggerEvent(AudioEvents[AudioType.HUNGER], _xHungerPackage.AudioClips[rnd]);
+            GameManager.Instance.EventManager.TriggerEvent(AudioEvents[AudioType.HUNGER], (bool)param[0], _xHungerPackage);
         } 
         
         private void PlaySadSound(object[] param)

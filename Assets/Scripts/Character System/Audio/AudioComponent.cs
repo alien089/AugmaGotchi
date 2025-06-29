@@ -18,12 +18,6 @@ namespace Character_System.Audio
             GameManager.Instance.EventManager.Register(GameManager.Instance.AudioManager.AudioEvents[_eAudioType], CallAudio);
         }
 
-        // Update is called once per frame
-        void Update()
-        { 
-        
-        }
-
         protected virtual void CallAudio(object[] param)
         {
             

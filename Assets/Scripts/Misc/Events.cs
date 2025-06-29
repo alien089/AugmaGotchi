@@ -22,6 +22,16 @@ public static class AugmaEventList
     /// params: AugmaStates enum
     /// </summary>
     public static string CHANGE_AUGMA_STATE = "CHANGE_AUGMA_STATE";
+    
+    /// <summary>
+    /// params: 
+    /// </summary>
+    public static string HAPPY_AUDIO = "HAPPY_AUDIO";
+    
+    /// <summary>
+    /// params: 
+    /// </summary>
+    public static string SAD_AUDIO = "SAD_AUDIO";
 }
 
 public static class CaressEventList
@@ -50,6 +60,11 @@ public static class CaressEventList
 
 public static class FoodEventList
 {
+    /// <summary>
+    /// params: Stats statType, float incrementValue 
+    /// </summary>
+    public static string IS_HUNGER = "IS_HUNGER";
+    
     /// <summary>
     /// params: Stats statType, float incrementValue 
     /// </summary>
