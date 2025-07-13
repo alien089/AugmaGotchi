@@ -24,12 +24,12 @@ public static class AugmaEventList
     public static string CHANGE_AUGMA_STATE = "CHANGE_AUGMA_STATE";
     
     /// <summary>
-    /// params: 
+    /// params: none
     /// </summary>
     public static string HAPPY_AUDIO = "HAPPY_AUDIO";
     
     /// <summary>
-    /// params: 
+    /// params: none
     /// </summary>
     public static string SAD_AUDIO = "SAD_AUDIO";
 }
@@ -61,7 +61,7 @@ public static class CaressEventList
 public static class FoodEventList
 {
     /// <summary>
-    /// params: Stats statType, float incrementValue 
+    /// params: bool value 
     /// </summary>
     public static string IS_HUNGER = "IS_HUNGER";
     
