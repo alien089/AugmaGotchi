@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 6549717410001312139}
   - component: {fileID: 6639664910910328673}
   m_Layer: 0
-  m_Name: AugmaFoodComponent
+  m_Name: EntityFoodComponent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

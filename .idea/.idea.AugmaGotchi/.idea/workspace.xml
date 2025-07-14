@@ -5,8 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7b1ed3e-decc-455b-a3ef-083600f08c3a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/EntityStateManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/States/EntityCaressState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/States/EntityFoodState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AugmaGotchi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AugmaGotchi/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Character/Sys Caress/AugmaCaressComponent.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Character/Sys Caress/AugmaCaressComponent.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Character/Sys Food/AugmaFoodComponent.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Character/Sys Food/AugmaFoodComponent.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/Audio/AudioComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/Audio/AudioComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/Audio/AudioComponentContinuous.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/Audio/AudioComponentContinuous.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/Audio/AudioComponentSpot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/Audio/AudioComponentSpot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/AugmaController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/EntityController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/AugmaController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/EntityController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/Caress System/CaressComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/Caress System/CaressComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/Caress System/CaressDetector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/Caress System/CaressDetector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/Food System/FoodComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/Food System/FoodComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/Food System/FoodInteractable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/Food System/FoodInteractable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/AugmaStateManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/AugmaStateManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/EntityStateManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/States/AugmaCaressState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/States/AugmaCaressState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/States/EntityCaressState.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/States/AugmaFoodState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/States/AugmaFoodState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/States/EntityFoodState.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/States/AugmaIdleState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/States/EntityIdleState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/States/AugmaIdleState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/States/EntityIdleState.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/States/AugmaJoyState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/States/EntityJoyState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/States/AugmaJoyState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/States/EntityJoyState.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enums/AugmaStates.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enums/EntityStates.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enums/AugmaStates.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enums/EntityStates.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/AudioManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/AugmaManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/EntityManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/AugmaManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/EntityManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Misc/Events.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Misc/Events.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI System/CanvasManagerSpawnAugma.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI System/CanvasManagerSpawnEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI System/CanvasManagerSpawnAugma.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI System/CanvasManagerSpawnEntity.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI System/UIObjectsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI System/UIObjectsManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI System/UIStatsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI System/UIStatsManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +61,12 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b528a70be4e443e99ead74b7f8674eca10400/73/ba45fb70/AudioSource.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character System/Caress System/CaressComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character System/Caress System/CaressDetector.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character System/EntityController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/EntityStateManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/States/EntityCaressState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/States/EntityFoodState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/States/EntityIdleState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/States/EntityJoyState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/MainMenu/UIMainMenuManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Misc/AudioSO.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI System/UIStatsManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -156,6 +198,7 @@
       <workItem from="1751047887070" duration="1110000" />
       <workItem from="1751194911339" duration="4257000" />
       <workItem from="1751909110370" duration="21086000" />
+      <workItem from="1752415361322" duration="13695000" />
     </task>
     <servers />
   </component>

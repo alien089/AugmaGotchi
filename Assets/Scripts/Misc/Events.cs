@@ -6,22 +6,22 @@ public static class MainMenuEventList
     public static string LOAD_SCENE = "LOAD_SCENE";
 }
 
-public static class AugmaEventList 
+public static class EntityEventList 
 {
     /// <summary>
     /// params: none
     /// </summary>
-    public static string SPAWN_AUGMA = "SPAWN_AUGMA"; 
+    public static string SPAWN_Entity = "SPAWN_Entity"; 
     
     /// <summary>
-    /// params: AugmaManager class instance
+    /// params: EntityManager class instance
     /// </summary>
-    public static string GIVE_AUGMA_TO_UI = "GIVE_AUGMA_TO_UI";
+    public static string GIVE_Entity_TO_UI = "GIVE_Entity_TO_UI";
     
     /// <summary>
-    /// params: AugmaStates enum
+    /// params: EntityStates enum
     /// </summary>
-    public static string CHANGE_AUGMA_STATE = "CHANGE_AUGMA_STATE";
+    public static string CHANGE_Entity_STATE = "CHANGE_Entity_STATE";
     
     /// <summary>
     /// params: none

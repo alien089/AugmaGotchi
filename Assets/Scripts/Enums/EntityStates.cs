@@ -1,6 +1,6 @@
 ﻿namespace Enums
 {
-    public enum AugmaStates
+    public enum EntityStates
     {
         IDLE,
         FOOD,

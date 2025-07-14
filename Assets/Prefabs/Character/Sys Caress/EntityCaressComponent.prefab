@@ -4907,7 +4907,7 @@ GameObject:
   - component: {fileID: 7466065456794092673}
   - component: {fileID: 4960672344058188338}
   m_Layer: 0
-  m_Name: AugmaCaressComponent
+  m_Name: EntityCaressComponent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

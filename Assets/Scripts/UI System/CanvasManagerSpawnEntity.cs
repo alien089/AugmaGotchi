@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace UI_System
 {
-    public class CanvasManagerSpawnAugma : MonoBehaviour
+    public class CanvasManagerSpawnEntity : MonoBehaviour
     {
         private Button _xSpawnBtn;
         
@@ -12,13 +12,13 @@ namespace UI_System
         {
             _xSpawnBtn = transform.Find("SpawnBtn").GetComponent<Button>();
             
-            _xSpawnBtn.onClick.AddListener(SpawnAugma);
+            _xSpawnBtn.onClick.AddListener(SpawnEntity);
         }
 
-        private void SpawnAugma()
+        private void SpawnEntity()
         {
             GetComponent<Canvas>().enabled = false;
-            GameManager.Instance.EventManager.TriggerEvent(AugmaEventList.SPAWN_AUGMA);
+            GameManager.Instance.EventManager.TriggerEvent(EntityEventList.SPAWN_Entity);
         }
     }
 }
