@@ -1,5 +1,4 @@
-﻿using System;
-using Enums;
+﻿using Enums;
 using Internal_Use;
 using Managers;
 using Oculus.Interaction;
@@ -7,7 +6,7 @@ using Oculus.Interaction.HandGrab;
 using Oculus.Interaction.Input;
 using UnityEngine;
 
-namespace Character_System.Caress_System
+namespace Character_System.Entity_Caress_System
 {
     // Manages caress interactions by detecting poke gestures and triggering related events and particle effects.
     public class CaressComponent : MonoBehaviour

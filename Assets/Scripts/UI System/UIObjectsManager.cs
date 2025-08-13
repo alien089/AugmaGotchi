@@ -33,7 +33,7 @@ namespace UI_System
             SpawnItem(ref _xToyInstance, _xToyPrefab, _xToyPosition);
 
             GameManager.Instance.EventManager.Register(FoodEventList.FOOD_UNGRABBED, FoodUngrabbed);
-            GameManager.Instance.EventManager.Register(ToyEventList.TOY_UNGRABBED, ToyUngrabbed);
+            GameManager.Instance.EventManager.Register(ToyEventList.TOY_THROWN, ToyThrown);
             GameManager.Instance.EventManager.Register(CaressEventList.NOT_WANT_CARESS, NotWantCaress);
         }
 
@@ -45,7 +45,7 @@ namespace UI_System
             GameManager.Instance.EventManager.Unregister(CaressEventList.WANT_CARESS, WantCaress);
 
             GameManager.Instance.EventManager.Unregister(FoodEventList.FOOD_UNGRABBED, FoodUngrabbed);
-            GameManager.Instance.EventManager.Unregister(ToyEventList.TOY_UNGRABBED, ToyUngrabbed);
+            GameManager.Instance.EventManager.Unregister(ToyEventList.TOY_THROWN, ToyThrown);
             GameManager.Instance.EventManager.Unregister(CaressEventList.NOT_WANT_CARESS, NotWantCaress);
         }
 
@@ -53,10 +53,10 @@ namespace UI_System
         private void SpawnItem(ref GameObject itemInstance, GameObject item, Transform position)
         {
             itemInstance = Instantiate(item, position);
-            itemInstance.transform.SetParent(this.transform);
+            itemInstance.transform.SetParent(transform);
         }
 
-        #region Food System
+        #region Entity Food System
 
         // Detaches food UI instance and sets entity state to FOOD.
         private void FoodGrabbed(object[] param)
@@ -74,7 +74,7 @@ namespace UI_System
 
         #endregion
 
-        #region Caress System
+        #region Entity Caress System
 
         // Sets entity state to CARESS when caress is wanted.
         private void WantCaress(object[] param)
@@ -90,7 +90,7 @@ namespace UI_System
 
         #endregion
 
-        #region Toy System
+        #region Entity Toy System
 
         // Detaches toy UI instance from parent.
         private void ToyGrabbed(object[] param)
@@ -99,9 +99,10 @@ namespace UI_System
         }
 
         // Respawns toy UI instance at designated position.
-        private void ToyUngrabbed(object[] param)
+        private void ToyThrown(object[] param)
         {
-            SpawnItem(ref _xToyInstance, _xToyPrefab, _xToyPosition);
+            GameManager.Instance.EventManager.TriggerEvent(EntityEventList.CHANGE_Entity_STATE, EntityStates.TOY);
+            //SpawnItem(ref _xToyInstance, _xToyPrefab, _xToyPosition);
         }
 
         #endregion

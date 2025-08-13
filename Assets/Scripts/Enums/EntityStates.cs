@@ -4,7 +4,7 @@
     {
         IDLE,
         FOOD,
-        JOY,
+        TOY,
         CARESS
     }
 }

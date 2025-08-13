@@ -1,9 +1,8 @@
-using System;
 using Enums;
 using Managers;
 using UnityEngine;
 
-namespace Character_System.Food_System
+namespace Character_System.Entity_Food_System
 {
     [RequireComponent(typeof(SphereCollider))]
     // Manages food interactions by detecting when food objects enter its trigger zone.

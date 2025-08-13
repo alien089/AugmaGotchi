@@ -2,7 +2,7 @@ using Managers;
 using Oculus.Interaction;
 using UnityEngine;
 
-namespace Character_System.Caress_System
+namespace Character_System.Entity_Caress_System
 {
     [RequireComponent(typeof(SphereCollider))]
     // Detects when an interactor enters or exits the caress interaction zone.

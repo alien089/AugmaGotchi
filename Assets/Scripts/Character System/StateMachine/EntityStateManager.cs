@@ -19,7 +19,7 @@ namespace Character_System.StateMachine
         protected override void InitStates()
         {
             StatesList.Add(EntityStates.IDLE, new EntityIdleState(EntityStates.IDLE, this));
-            StatesList.Add(EntityStates.JOY, new EntityJoyState(EntityStates.JOY, this));
+            StatesList.Add(EntityStates.TOY, new EntityToyState(EntityStates.TOY, this));
             StatesList.Add(EntityStates.FOOD, new EntityFoodState(EntityStates.FOOD, this));
             StatesList.Add(EntityStates.CARESS, new EntityCaressState(EntityStates.CARESS, this));
         }

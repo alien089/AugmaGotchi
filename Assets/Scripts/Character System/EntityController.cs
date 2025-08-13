@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Character_System.Caress_System;
-using Character_System.Food_System;
+using Character_System.Entity_Caress_System;
+using Character_System.Entity_Food_System;
 using Character_System.StateMachine;
 using Enums;
 using Managers;
@@ -36,7 +36,7 @@ namespace Character_System
             GameManager.Instance.EventManager.Register(EntityEventList.CHANGE_Entity_STATE, SetFlag);
 
             // Initialize state flags.
-            _mStateFlags.Add(EntityStates.JOY, false);
+            _mStateFlags.Add(EntityStates.TOY, false);
             _mStateFlags.Add(EntityStates.FOOD, false);
             _mStateFlags.Add(EntityStates.CARESS, false);
             _mStateFlags.Add(EntityStates.IDLE, true);
@@ -67,7 +67,7 @@ namespace Character_System
             EntityStates state = (EntityStates)param[0];
 
             // Reset all state flags before setting the new active state.
-            _mStateFlags[EntityStates.JOY] = false;
+            _mStateFlags[EntityStates.TOY] = false;
             _mStateFlags[EntityStates.FOOD] = false;
             _mStateFlags[EntityStates.CARESS] = false;
             _mStateFlags[EntityStates.IDLE] = false;
@@ -80,9 +80,9 @@ namespace Character_System
         private bool SetState()
         {
             // Priority: Joy state.
-            if (_mStateFlags[EntityStates.JOY])
+            if (_mStateFlags[EntityStates.TOY])
             {
-                _xEntityStateManager.ChangeState(EntityStates.JOY);
+                _xEntityStateManager.ChangeState(EntityStates.TOY);
                 return true;
             }
             // Priority: Food state.
