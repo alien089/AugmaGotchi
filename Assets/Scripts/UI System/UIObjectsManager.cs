@@ -62,14 +62,14 @@ namespace UI_System
         private void FoodGrabbed(object[] param)
         {
             _xFoodInstance.transform.SetParent(null);
-            GameManager.Instance.EventManager.TriggerEvent(EntityEventList.CHANGE_Entity_STATE, EntityStates.FOOD);
+            GameManager.Instance.EventManager.TriggerEvent(EntityEventList.CHANGE_ENTITY_STATE, EntityStates.FOOD);
         }
 
         // Respawns food UI instance and sets entity state to IDLE.
         private void FoodUngrabbed(object[] param)
         {
             SpawnItem(ref _xFoodInstance, _xFoodPrefab, _xFoodPosition);
-            GameManager.Instance.EventManager.TriggerEvent(EntityEventList.CHANGE_Entity_STATE, EntityStates.IDLE);
+            GameManager.Instance.EventManager.TriggerEvent(EntityEventList.CHANGE_ENTITY_STATE, EntityStates.IDLE);
         }
 
         #endregion
@@ -79,13 +79,13 @@ namespace UI_System
         // Sets entity state to CARESS when caress is wanted.
         private void WantCaress(object[] param)
         {
-            GameManager.Instance.EventManager.TriggerEvent(EntityEventList.CHANGE_Entity_STATE, EntityStates.CARESS);
+            GameManager.Instance.EventManager.TriggerEvent(EntityEventList.CHANGE_ENTITY_STATE, EntityStates.CARESS);
         }
 
         // Sets entity state to IDLE when caress is no longer wanted.
         private void NotWantCaress(object[] param)
         {
-            GameManager.Instance.EventManager.TriggerEvent(EntityEventList.CHANGE_Entity_STATE, EntityStates.IDLE);
+            GameManager.Instance.EventManager.TriggerEvent(EntityEventList.CHANGE_ENTITY_STATE, EntityStates.IDLE);
         }
 
         #endregion
@@ -101,7 +101,7 @@ namespace UI_System
         // Respawns toy UI instance at designated position.
         private void ToyThrown(object[] param)
         {
-            GameManager.Instance.EventManager.TriggerEvent(EntityEventList.CHANGE_Entity_STATE, EntityStates.TOY);
+            GameManager.Instance.EventManager.TriggerEvent(EntityEventList.CHANGE_ENTITY_STATE, EntityStates.TOY);
             //SpawnItem(ref _xToyInstance, _xToyPrefab, _xToyPosition);
         }
 

@@ -6,40 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="d7b1ed3e-decc-455b-a3ef-083600f08c3a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AugmaGotchi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AugmaGotchi/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Meshes/Materials/Alien Radish_albedo.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Meshes/Materials/Alien Radish_albedo.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Meshes/Materials/Ballmap 1 - Colors.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Meshes/Materials/Ballmap 1 - Colors.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Oculus/OculusProjectConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Oculus/OculusProjectConfig.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Character/Augma.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Character/Augma.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Character/Sys Caress/EntityCaressComponent.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Character/Sys Caress/EntityCaressComponent.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Character/Sys Food/EntityFoodComponent.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Character/Sys Food/EntityFoodComponent.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Character/Sys Toy/alienToy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Character/Sys Toy/alienToy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GameManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GameManager.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PlayerController.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PlayerController.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/scn_PlayScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/scn_PlayScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/Caress System.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/Entity Caress System.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/Caress System/CaressComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/Entity Caress System/CaressComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/Caress System/CaressComponent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/Entity Caress System/CaressComponent.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/Caress System/CaressDetector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/Entity Caress System/CaressDetector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/Caress System/CaressDetector.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/Entity Caress System/CaressDetector.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/EntityController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/EntityController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/Food System.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/Entity Food System.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/Food System/FoodComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/Entity Food System/FoodComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/Food System/FoodComponent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/Entity Food System/FoodComponent.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/Food System/FoodInteractable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/Entity Food System/FoodInteractable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/Food System/FoodInteractable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/Entity Food System/FoodInteractable.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/Play System.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/Entity Toy System.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/EntityStateManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/EntityStateManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/States/EntityJoyState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/States/EntityToyState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/States/EntityJoyState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/States/EntityToyState.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enums/EntityStates.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enums/EntityStates.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI System/CanvasManagerSpawnEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI System/CanvasManagerSpawnEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/States/EntityCaressState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/States/EntityCaressState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/States/EntityToyState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/States/EntityToyState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Design Patterns/State Pattern/StatesMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Design Patterns/State Pattern/StatesMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Misc/Events.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Misc/Events.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI System/UIObjectsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI System/UIObjectsManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XR/Settings/OpenXR Package Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XR/Settings/OpenXR Package Settings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,15 +112,13 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="23808">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="23808" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
-        <list>
-          <MonoRuntime />
-        </list>
+        <list />
       </option>
       <option name="selectedOptions">
         <list />
@@ -203,6 +174,8 @@
       <workItem from="1754475277969" duration="13039000" />
       <workItem from="1755076120158" duration="5070000" />
       <workItem from="1755113154775" duration="7499000" />
+      <workItem from="1755217560187" duration="3886000" />
+      <workItem from="1755222572207" duration="2452000" />
     </task>
     <servers />
   </component>

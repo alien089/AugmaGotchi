@@ -31,7 +31,7 @@ namespace Character_System.StateMachine.States
         public override void OnExit()
         {
             base.OnExit();
-            _xEntityStateManager.xEntityController.XCaressComponent.EnableComponent(true);
+            _xEntityStateManager.xEntityController.XCaressComponent.EnableComponent(false);
         }
     }
 }

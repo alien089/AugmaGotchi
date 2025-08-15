@@ -6,6 +6,7 @@ using Character_System.Entity_Food_System;
 using Character_System.StateMachine;
 using Enums;
 using Managers;
+using Meta.XR.MRUtilityKitSamples.PassthroughRelighting;
 using UnityEngine;
 
 namespace Character_System
@@ -29,11 +30,11 @@ namespace Character_System
         private void Start()
         {
             // Initialize state manager and set initial state to IDLE.
-            _xEntityStateManager = new EntityStateManager(this);
+            _xEntityStateManager = new EntityStateManager(this, GetComponent<OppyCharacterController>());
             _xEntityStateManager.CurrentState = _xEntityStateManager.StatesList[EntityStates.IDLE];
 
             // Register to listen for state change events.
-            GameManager.Instance.EventManager.Register(EntityEventList.CHANGE_Entity_STATE, SetFlag);
+            GameManager.Instance.EventManager.Register(EntityEventList.CHANGE_ENTITY_STATE, SetFlag);
 
             // Initialize state flags.
             _mStateFlags.Add(EntityStates.TOY, false);
@@ -105,7 +106,7 @@ namespace Character_System
         // Cleans up event registration on application quit to prevent leaks.
         private void OnApplicationQuit()
         {
-            GameManager.Instance.EventManager.Unregister(EntityEventList.CHANGE_Entity_STATE, SetFlag);
+            GameManager.Instance.EventManager.Unregister(EntityEventList.CHANGE_ENTITY_STATE, SetFlag);
         }
     }
 }

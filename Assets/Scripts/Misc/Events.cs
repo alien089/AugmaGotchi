@@ -21,7 +21,12 @@ public static class EntityEventList
     /// <summary>
     /// params: EntityStates enum
     /// </summary>
-    public static string CHANGE_Entity_STATE = "CHANGE_Entity_STATE";
+    public static string CHANGE_ENTITY_STATE = "CHANGE_ENTITY_STATE";
+    
+    /// <summary>
+    /// params: EntityStates enum
+    /// </summary>
+    public static string CHANGE_TOY_STATE = "CHANGE_TOY_STATE";
     
     /// <summary>
     /// params: none

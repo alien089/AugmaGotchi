@@ -12,7 +12,7 @@ namespace Framework.Generics.Pattern.StatePattern
         public State<TStateIDType> CurrentState;
         public State<TStateIDType> PreviousState;
 
-        public StatesMachine()
+        protected StatesMachine()
         {
             StatesList = null;
             CurrentState = null;
@@ -24,7 +24,7 @@ namespace Framework.Generics.Pattern.StatePattern
         /// <summary>
         /// Initialization states
         /// </summary>
-        protected virtual void InitStatesManager()
+        protected void InitStatesManager()
         {
             if (StatesList == null) 
                 StatesList = new Dictionary<TStateIDType, State<TStateIDType>>();
@@ -47,7 +47,7 @@ namespace Framework.Generics.Pattern.StatePattern
                 return;
 
             PreviousState = CurrentState;
-            CurrentState.OnExit();
+            PreviousState.OnExit();
             CurrentState = StatesList[stateIDType];
             CurrentState.OnEnter();
         }
