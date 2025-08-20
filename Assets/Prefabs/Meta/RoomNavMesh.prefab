@@ -81,9 +81,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f799e2eaa46881948954fd7d1d3207dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  linkWidth: 0
-  bidirectionalLinks: 0
-  linkCompenstationAmount: 0
-  floors: []
+  linkWidth: 1
+  bidirectionalLinks: 1
+  linkCompenstationAmount: 1
+  surfacesOnFloor: []
+  floor: []
   debugLines: 0
-  wallConnectThreshold: 0
+  wallConnectThreshold: 1

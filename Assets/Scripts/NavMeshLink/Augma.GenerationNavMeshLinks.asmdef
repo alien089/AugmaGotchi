@@ -2,7 +2,8 @@
     "name": "Augma.GenerationNavMeshLinks",
     "rootNamespace": "",
     "references": [
-        "Unity.AI.Navigation"
+        "Unity.AI.Navigation",
+        "meta.xr.mrutilitykit"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -1,141 +1,144 @@
+using System;
 using System.Collections.Generic;
+using Meta.XR.MRUtilityKit;
 using UnityEngine;
 using Unity.AI.Navigation;
+using UnityEngine.Serialization;
 
 namespace Augma.GenerationNavMeshLinks
 {
     public class GenerateNavLinks : MonoBehaviour
     {
+        // Width of the generated NavMeshLink
         public float linkWidth;
+
+        // Whether the generated links should be bidirectional
         public bool bidirectionalLinks;
+
+        // Temporary storage for closest connection points
         private Vector3 _closestPointFromAToB;
         private Vector3 _closestPointFromBToA;
+
+        // How far the link endpoints should be adjusted inward (compensation)
         public float linkCompenstationAmount;
-        public List<BoxCollider> floors = new List<BoxCollider>();
+
+        // Lists of categorized colliders
+        public List<BoxCollider> surfacesOnFloor = new List<BoxCollider>();
+        public List<MeshCollider> floor = new List<MeshCollider>();
+        private List<Collider> _alreadyDone = new List<Collider>();
+        private List<NavMeshLink> _navMeshLinks = new List<NavMeshLink>();
+        
+        // Toggle debug drawing of rays in the scene
         public bool debugLines;
-        public float wallConnectThreshold;
+
+        // Max distance threshold to consider two objects "connected"
+        public float fDistanceThreshold;
+
+        // Holds all BoxColliders found in children
         private BoxCollider[] _allBoxes;
 
-        
+        //trigger link generation in Editor
         public void DoGenerateLinks()
         {
+            surfacesOnFloor.Clear();
+            floor.Clear();
+            
             GetNavLinkTagTypes();
-            //SeparateLinkTagTypes();
             ConnectThemAll();
         }
 
-        public void ConnectThemAll()
+        // Connects all categorized objects together based on distance rules
+        private void ConnectThemAll()
         {
-            IfDistanceOkThenConnect(floors, floors);
+            IfDistanceOkThenConnect(surfacesOnFloor, surfacesOnFloor);
+            _alreadyDone.Clear();
+            IfDistanceOkThenConnect(floor, surfacesOnFloor);
         }
-        
+
+        // Finds all NavLinkTags and colliders in children
         public void GetNavLinkTagTypes()
         {
-            _allBoxes = GetComponentsInChildren<BoxCollider>();
-        }
+            List<MRUKAnchor> sceneAnchors = MRUK.Instance.GetCurrentRoom().Anchors;
 
-        // public void SeparateLinkTagTypes()
-        // {
-        //     for (int index = 0; index < _allBoxes.Length; index++)
-        //     {
-        //         var box = _allBoxes[index];
-        //
-        //         var i = box.gameObject.GetComponent<NavLinkTag>();
-        //
-        //         if(i != null)
-        //         {
-        //             var ii = i.RoomPieceType;
-        //
-        //             if (ii == NavLinkTag.typo.Floor)
-        //             {
-        //                 //var iii = i.gameObject.GetComponents<BoxCollider>();
-        //                 floors.Add(box);
-        //             }
-        //         }
-        //     }
-        // }
+            MRUKAnchor.SceneLabels x = GetComponent<SceneNavigation>().SceneObstacles;
 
-        public void ConnectAListToBList(List<BoxCollider> aList, List<BoxCollider> bList)
-        {
-            for (int index = 0; index < aList.Count; index++)
+            foreach (var anchor in sceneAnchors)
             {
-                var i = aList[index];
+                if (!anchor.HasAnyLabel(x)) continue;
 
-                for (int index1 = 0; index1 < bList.Count; index1++)
-                {
-                    var ii = bList[index1];
-                    ConnectTheLinks(i, ii);
-                }
+                if (!anchor.HasAnyLabel(MRUKAnchor.SceneLabels.FLOOR))
+                    surfacesOnFloor.Add(anchor.GetComponentInChildren<BoxCollider>());
+                else
+                    floor.Add(anchor.GetComponentInChildren<MeshCollider>());
             }
-
         }
-
-        public void IfDistanceOkThenConnect(List<BoxCollider> aList, List<BoxCollider> bList)
+        
+        // Connects colliders only if they are close enough
+        private void IfDistanceOkThenConnect<T, T2>(List<T> aList, List<T2> bList)
+            where T : Collider 
+            where T2 : Collider
         {
-            for (int index = 0; index < aList.Count; index++)
+            foreach (var colliderX in aList)
             {
-                var i = aList[index];
+                _alreadyDone.Add(colliderX);
 
-                for (int index1 = 0; index1 < bList.Count; index1++)
+                foreach (var colliderY in bList)
                 {
-                    var ii = bList[index1];
+                    if (_alreadyDone.Contains(colliderY)) continue;
 
-                    if (IsObjectCloseEnough(i, ii))
+                    if (IsObjectCloseEnough(colliderX, colliderY))
                     {
-                        ConnectTheLinks(i, ii);
+                        ConnectTheLinks(colliderX, colliderY);
                     }
-
                 }
             }
-
         }
 
-        public bool IsObjectCloseEnough(Collider a, Collider b)
+        // Checks if two colliders are within threshold distance
+        private bool IsObjectCloseEnough(Collider a, Collider b)
         {
-
-            if (string.Compare(a.gameObject.name, b.gameObject.name) == 0)
+            // Skip if it's the same object
+            if (string.CompareOrdinal(a.gameObject.name, b.gameObject.name) == 0)
             {
                 return false;
             }
 
-            var boxCenter = a.GetComponent<BoxCollider>().center;
-            var aCenter = a.transform.TransformPoint(boxCenter);
+            var aCenter = GetColliderCenter(a);
 
             var closestFromAToB = a.ClosestPoint(b.ClosestPoint(aCenter));
             var closestFromBToA = b.ClosestPoint(closestFromAToB);
             var distance = Vector3.Distance(closestFromAToB, closestFromBToA);
 
-            if (distance <= wallConnectThreshold)
-            {
-                return true;
-            } else
-            {
-                return false;
-            }
-
+            return distance <= fDistanceThreshold;
         }
 
-        public void ConnectTheLinks(Collider a, Collider b)
+        // Creates and configures a NavMeshLink between two colliders
+        private void ConnectTheLinks(Collider a, Collider b)
         {
             GetClosestPointsToEachOther(a, b);
             var link = CreateLinkOnCollider(a);
             SetNavMeshLinkData(link, a);
             AdjustLinks(link, a, b);
+            
+            _navMeshLinks.Add(link);
         }
 
-        public void GetClosestPointsToEachOther(Collider a, Collider b)
+        // Finds closest points between two colliders
+        private void GetClosestPointsToEachOther(Collider a, Collider b)
         {
-            var aCenter = GetBoxCenterPosition(a, a.transform);
+            var aCenter = GetColliderCenter(a);
             _closestPointFromAToB = a.ClosestPoint(b.ClosestPoint(aCenter));
             _closestPointFromBToA = b.ClosestPoint(_closestPointFromAToB);
         }
 
-        public NavMeshLink CreateLinkOnCollider(Collider coll)
+        // Creates a NavMeshLink component on a collider
+        private NavMeshLink CreateLinkOnCollider(Collider coll)
         {
             return coll.gameObject.AddComponent<NavMeshLink>();
         }
 
-        public void SetNavMeshLinkData(NavMeshLink link, Collider a)
+        // Sets initial NavMeshLink properties
+        private void SetNavMeshLinkData(NavMeshLink link, Collider a)
         {
             link.startPoint = a.transform.InverseTransformPoint(_closestPointFromAToB);
             link.endPoint = a.transform.InverseTransformPoint(_closestPointFromBToA);
@@ -143,9 +146,10 @@ namespace Augma.GenerationNavMeshLinks
             link.width = linkWidth;
         }
 
-        public void AdjustLinks(NavMeshLink link, Collider a, Collider b)
+        // Adjusts NavMeshLink start and end points inward for better alignment
+        private void AdjustLinks(NavMeshLink link, Collider a, Collider b)
         {
-            var aCenter = GetBoxCenterPosition(a, a.transform);
+            var aCenter = GetColliderCenter(a);
 
             var directionFromACenterToLinkStart = -(_closestPointFromAToB - aCenter).normalized;
             if (debugLines == true)
@@ -156,7 +160,7 @@ namespace Augma.GenerationNavMeshLinks
             Ray aRay = new Ray(_closestPointFromAToB, directionFromACenterToLinkStart);
             var aPos = aRay.GetPoint(linkCompenstationAmount);
 
-            var bCenter = GetBoxCenterPosition(b, b.transform);
+            var bCenter = GetColliderCenter(b);
 
             var directionFromBTransformToLinkEnd = -(_closestPointFromBToA - bCenter).normalized;
             if (debugLines == true)
@@ -167,17 +171,31 @@ namespace Augma.GenerationNavMeshLinks
             Ray bRay = new Ray(_closestPointFromBToA, directionFromBTransformToLinkEnd);
             var bPos = bRay.GetPoint(linkCompenstationAmount);
 
-
             link.startPoint = a.transform.InverseTransformPoint(aPos);
             link.endPoint = a.transform.InverseTransformPoint(bPos);
         }
 
+        // Returns the world position of a collider's center
         public Vector3 GetBoxCenterPosition(Collider coll, Transform trans)
         {
             var box = coll.GetComponent<BoxCollider>().center;
             return trans.transform.TransformPoint(box);
         }
+        
+        private Vector3 GetColliderCenter(Collider coll)
+        {
+            if (coll is BoxCollider box) return coll.transform.TransformPoint(box.center);
+            
+            return coll.bounds.center;
+        }
 
+        public void ClearNavMeshLinks()
+        {
+            foreach (NavMeshLink link in _navMeshLinks) Destroy(link);
+            
+            surfacesOnFloor.Clear();
+            floor.Clear();
+        }
     }
 }
 
