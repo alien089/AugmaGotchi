@@ -98,10 +98,7 @@ namespace Augma.GenerationNavMeshLinks
         private bool IsObjectCloseEnough(Collider a, Collider b)
         {
             // Skip if it's the same object
-            if (string.CompareOrdinal(a.gameObject.name, b.gameObject.name) == 0)
-            {
-                return false;
-            }
+            if (string.CompareOrdinal(a.gameObject.name, b.gameObject.name) == 0) return false;
 
             var aCenter = GetColliderCenter(a);
 
@@ -127,8 +124,9 @@ namespace Augma.GenerationNavMeshLinks
         private void GetClosestPointsToEachOther(Collider a, Collider b)
         {
             var aCenter = GetColliderCenter(a);
+            var bCenter = GetColliderCenter(b);
             _closestPointFromAToB = a.ClosestPoint(b.ClosestPoint(aCenter));
-            _closestPointFromBToA = b.ClosestPoint(_closestPointFromAToB);
+            _closestPointFromBToA = b.ClosestPoint(a.ClosestPoint(bCenter));
         }
 
         // Creates a NavMeshLink component on a collider
@@ -174,19 +172,16 @@ namespace Augma.GenerationNavMeshLinks
             link.startPoint = a.transform.InverseTransformPoint(aPos);
             link.endPoint = a.transform.InverseTransformPoint(bPos);
         }
-
-        // Returns the world position of a collider's center
-        public Vector3 GetBoxCenterPosition(Collider coll, Transform trans)
-        {
-            var box = coll.GetComponent<BoxCollider>().center;
-            return trans.transform.TransformPoint(box);
-        }
         
+        // Returns the world position of a collider center
         private Vector3 GetColliderCenter(Collider coll)
         {
-            if (coll is BoxCollider box) return coll.transform.TransformPoint(box.center);
-            
-            return coll.bounds.center;
+            Vector3 rtn;
+            if (coll is BoxCollider box) rtn = coll.transform.TransformPoint(box.center);
+            else rtn = coll.bounds.center;
+
+            rtn.y += coll.bounds.size.y / 2;
+            return rtn;
         }
 
         public void ClearNavMeshLinks()

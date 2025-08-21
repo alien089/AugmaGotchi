@@ -7,8 +7,6 @@
     <list default="true" id="d7b1ed3e-decc-455b-a3ef-083600f08c3a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AugmaGotchi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AugmaGotchi/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Meta/RoomNavMesh.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Meta/RoomNavMesh.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/scn_PlayScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/scn_PlayScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NavMeshLink/Augma.GenerationNavMeshLinks.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NavMeshLink/Augma.GenerationNavMeshLinks.asmdef" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/NavMeshLink/GenerateNavLinks.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NavMeshLink/GenerateNavLinks.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -117,10 +115,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="28580">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="30344">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="28580" />
+      <option name="pid" value="30344" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
         <list>
@@ -188,6 +186,7 @@
       <workItem from="1755473343032" duration="4861000" />
       <workItem from="1755609031327" duration="4872000" />
       <workItem from="1755614470130" duration="10749000" />
+      <workItem from="1755703517881" duration="19610000" />
     </task>
     <servers />
   </component>

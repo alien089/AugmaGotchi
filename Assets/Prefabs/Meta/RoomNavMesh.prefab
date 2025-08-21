@@ -49,7 +49,7 @@ MonoBehaviour:
   CollectGeometry: 1
   CollectObjects: 2
   AgentRadius: 0.05
-  AgentHeight: 0.35
+  AgentHeight: 0.3
   AgentClimb: 54.31
   AgentMaxSlope: 45
   Agents: []
@@ -87,4 +87,4 @@ MonoBehaviour:
   surfacesOnFloor: []
   floor: []
   debugLines: 0
-  wallConnectThreshold: 1
+  fDistanceThreshold: 1
