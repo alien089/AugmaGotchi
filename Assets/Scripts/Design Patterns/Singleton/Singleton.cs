@@ -8,7 +8,7 @@ namespace Framework.Generics.Pattern.SingletonPattern
     {
         public static T Instance;
         // Start is called before the first frame update
-        void Awake()
+        public virtual void Awake()
         {
             if (Instance == null)
             {

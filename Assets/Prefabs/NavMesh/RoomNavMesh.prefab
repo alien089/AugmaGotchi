@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7267835570455054497}
   - component: {fileID: 8043978452642781585}
-  - component: {fileID: 765233589437171132}
   m_Layer: 0
   m_Name: RoomNavMesh
   m_TagString: Untagged
@@ -69,22 +68,3 @@ MonoBehaviour:
   <OnNavMeshInitialized>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &765233589437171132
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6169259830428913749}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f799e2eaa46881948954fd7d1d3207dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  linkWidth: 1
-  bidirectionalLinks: 1
-  linkCompenstationAmount: 1
-  surfacesOnFloor: []
-  floor: []
-  debugLines: 0
-  fDistanceThreshold: 1

@@ -6,8 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="d7b1ed3e-decc-455b-a3ef-083600f08c3a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AugmaGotchi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AugmaGotchi/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Meta/RoomNavMesh.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Meta/RoomNavMesh.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Meta/EffectMesh.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Meta/EffectMesh.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Meta/Metadata.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Meta/Metadata.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Meta/RoomNavMesh.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Meta/RoomNavMesh.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Meta/Telemetry.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Meta/Telemetry.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/scn_PlayScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/scn_PlayScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Design Patterns/Singleton/Singleton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Design Patterns/Singleton/Singleton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/NavMeshLink/GenerateNavLinks.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NavMeshLink/GenerateNavLinks.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +33,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/a01fc2ca27904ca2baa92b8ca4608ad94ec00/79/55309134/02000023pdb80.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/37cc348edc804f4cb176b63962c716e7177200/8c/e3a0bf30/Object.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4b8f645257c94d1296f440a10c6f388e961000/3c/950bbe39/Editor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4b8f645257c94d1296f440a10c6f388e961000/b5/282b32fc/PropertyDrawer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4b8f645257c94d1296f440a10c6f388e961000/fe/8b80bddf/GameObjectInspector.cs" root0="FORCE_HIGHLIGHTING" />
@@ -39,6 +51,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Misc/AudioSO.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI System/UIStatsManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.meta.xr.mrutilitykit@77.0.0/Core/Scripts/AnchorPrefabSpawner.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.meta.xr.mrutilitykit@77.0.0/Core/Scripts/EffectMesh.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.meta.xr.mrutilitykit@77.0.0/Core/Scripts/MRUK.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.meta.xr.mrutilitykit@77.0.0/Core/Scripts/MRUKAnchor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.meta.xr.mrutilitykit@77.0.0/Core/Scripts/MRUKRoom.cs" root0="SKIP_HIGHLIGHTING" />
@@ -46,6 +59,8 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.meta.xr.mrutilitykit@77.0.0/Editor/SceneNavigationEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.meta.xr.mrutilitykit@77.0.0/Tests/PlayMode/SceneNavigationTests.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.meta.xr.sdk.core@77.0.0/Scripts/OVRAnchor/OVRScene.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.meta.xr.sdk.core@77.0.0/Scripts/OVRTelemetry/OVRTelemetry.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.meta.xr.sdk.core@77.0.0/Scripts/OVRTelemetry/OVRTelemetryMarker.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.meta.xr.sdk.core@77.0.0/Scripts/Util/Feature.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.meta.xr.sdk.interaction@76.0.0/Runtime/Scripts/Interaction/Core/IInteractor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.meta.xr.sdk.interaction@76.0.0/Runtime/Scripts/Interaction/Core/Interactable.cs" root0="SKIP_HIGHLIGHTING" />
@@ -115,10 +130,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="30344">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="3644">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="30344" />
+      <option name="pid" value="3644" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
         <list>
@@ -187,6 +202,8 @@
       <workItem from="1755609031327" duration="4872000" />
       <workItem from="1755614470130" duration="10749000" />
       <workItem from="1755703517881" duration="19610000" />
+      <workItem from="1755856152209" duration="9296000" />
+      <workItem from="1755866468144" duration="1698000" />
     </task>
     <servers />
   </component>
@@ -209,29 +226,42 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Library/PackageCache/com.meta.xr.mrutilitykit@77.0.0/Core/Scripts/SceneNavigation.cs</url>
-          <line>769</line>
+          <line>768</line>
           <properties documentPath="C:\Users\Gabriel\Documents\AProjects\Exams\Specialization Project\AugmaGotchi\Library\PackageCache\com.meta.xr.mrutilitykit@77.0.0\Core\Scripts\SceneNavigation.cs" containingFunctionPresentation="Method 'CreateNavigableSurfaces'">
             <startOffsets>
-              <option value="32755" />
+              <option value="32754" />
             </startOffsets>
             <endOffsets>
-              <option value="32788" />
+              <option value="32787" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Library/PackageCache/com.meta.xr.mrutilitykit@77.0.0/Core/Scripts/SceneNavigation.cs</url>
-          <line>722</line>
+          <line>721</line>
           <properties documentPath="C:\Users\Gabriel\Documents\AProjects\Exams\Specialization Project\AugmaGotchi\Library\PackageCache\com.meta.xr.mrutilitykit@77.0.0\Core\Scripts\SceneNavigation.cs" containingFunctionPresentation="Method 'CreateRoomBridges'">
             <startOffsets>
-              <option value="30442" />
+              <option value="30441" />
             </startOffsets>
             <endOffsets>
-              <option value="30468" />
+              <option value="30467" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Library/PackageCache/com.meta.xr.mrutilitykit@77.0.0/Core/Scripts/SceneNavigation.cs</url>
+          <line>292</line>
+          <properties documentPath="C:\Users\Gabriel\Documents\AProjects\Exams\Specialization Project\AugmaGotchi\Library\PackageCache\com.meta.xr.mrutilitykit@77.0.0\Core\Scripts\SceneNavigation.cs" containingFunctionPresentation="Method 'OnSceneLoadedEvent'">
+            <startOffsets>
+              <option value="12702" />
+            </startOffsets>
+            <endOffsets>
+              <option value="12722" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="59" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

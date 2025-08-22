@@ -37,13 +37,29 @@ namespace Augma.GenerationNavMeshLinks
         // Holds all BoxColliders found in children
         private BoxCollider[] _allBoxes;
 
+        private void Start()
+        {
+            MRUK.Instance.RegisterSceneLoadedCallback(DoGenerateLinks);
+            
+            //MRUK.Instance.RoomCreatedEvent.AddListener(DoGenerateLinksEvent);
+        }
+
         //trigger link generation in Editor
         public void DoGenerateLinks()
         {
             surfacesOnFloor.Clear();
             floor.Clear();
             
-            GetNavLinkTagTypes();
+            GetNavLinkTagTypes(MRUK.Instance.GetCurrentRoom());
+            ConnectThemAll();
+        }
+        
+        public void DoGenerateLinksEvent(MRUKRoom room)
+        {
+            surfacesOnFloor.Clear();
+            floor.Clear();
+            
+            GetNavLinkTagTypes(room);
             ConnectThemAll();
         }
 
@@ -56,11 +72,21 @@ namespace Augma.GenerationNavMeshLinks
         }
 
         // Finds all NavLinkTags and colliders in children
-        public void GetNavLinkTagTypes()
+        public void GetNavLinkTagTypes(MRUKRoom room = null)
         {
-            List<MRUKAnchor> sceneAnchors = MRUK.Instance.GetCurrentRoom().Anchors;
+            if (!MRUK.Instance)
+            {
+                throw new NullReferenceException("MRUK instance is not initialized.");
+            }
+            var rooms = room != null ? new List<MRUKRoom> { room } : MRUK.Instance.Rooms;
+            if (rooms.Count == 0)
+            {
+                throw new InvalidOperationException("No rooms available for NavMesh building.");
+            }
+            
+            List<MRUKAnchor> sceneAnchors = rooms[0].Anchors;
 
-            MRUKAnchor.SceneLabels x = GetComponent<SceneNavigation>().SceneObstacles;
+            MRUKAnchor.SceneLabels x = FindObjectOfType<SceneNavigation>().SceneObstacles;
 
             foreach (var anchor in sceneAnchors)
             {
@@ -140,6 +166,7 @@ namespace Augma.GenerationNavMeshLinks
         {
             link.startPoint = a.transform.InverseTransformPoint(_closestPointFromAToB);
             link.endPoint = a.transform.InverseTransformPoint(_closestPointFromBToA);
+            link.agentTypeID = 2;
             link.bidirectional = bidirectionalLinks;
             link.width = linkWidth;
         }
