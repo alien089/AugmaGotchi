@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 471206329665222376}
+  - component: {fileID: 4275948252495130594}
   m_Layer: 0
   m_Name: NavMeshSystem
   m_TagString: Untagged
@@ -36,6 +37,18 @@ Transform:
   - {fileID: 4944896840940891358}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4275948252495130594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4762407799009169239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 192f0d6c4410404cb5f498b06b444e66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2957274780583870969
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -395,11 +408,122 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8043978452642781585, guid: e760a84f7bdf8c5438fa96d6821578e4,
+        type: 3}
+      propertyPath: Agents.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8043978452642781585, guid: e760a84f7bdf8c5438fa96d6821578e4,
+        type: 3}
+      propertyPath: <OnNavMeshInitialized>k__BackingField.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8043978452642781585, guid: e760a84f7bdf8c5438fa96d6821578e4,
+        type: 3}
+      propertyPath: <OnNavMeshInitialized>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8043978452642781585, guid: e760a84f7bdf8c5438fa96d6821578e4,
+        type: 3}
+      propertyPath: <OnNavMeshInitialized>k__BackingField.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8043978452642781585, guid: e760a84f7bdf8c5438fa96d6821578e4,
+        type: 3}
+      propertyPath: <OnNavMeshInitialized>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8043978452642781585, guid: e760a84f7bdf8c5438fa96d6821578e4,
+        type: 3}
+      propertyPath: <OnNavMeshInitialized>k__BackingField.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8043978452642781585, guid: e760a84f7bdf8c5438fa96d6821578e4,
+        type: 3}
+      propertyPath: <OnNavMeshInitialized>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_enabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 8043978452642781585, guid: e760a84f7bdf8c5438fa96d6821578e4,
+        type: 3}
+      propertyPath: <OnNavMeshInitialized>k__BackingField.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: set_enabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 8043978452642781585, guid: e760a84f7bdf8c5438fa96d6821578e4,
+        type: 3}
+      propertyPath: <OnNavMeshInitialized>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.Behaviour, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8043978452642781585, guid: e760a84f7bdf8c5438fa96d6821578e4,
+        type: 3}
+      propertyPath: <OnNavMeshInitialized>k__BackingField.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.Behaviour, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8043978452642781585, guid: e760a84f7bdf8c5438fa96d6821578e4,
+        type: 3}
+      propertyPath: <OnNavMeshInitialized>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8043978452642781585, guid: e760a84f7bdf8c5438fa96d6821578e4,
+        type: 3}
+      propertyPath: <OnNavMeshInitialized>k__BackingField.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8043978452642781585, guid: e760a84f7bdf8c5438fa96d6821578e4,
+        type: 3}
+      propertyPath: <OnNavMeshInitialized>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8043978452642781585, guid: e760a84f7bdf8c5438fa96d6821578e4,
+        type: 3}
+      propertyPath: <OnNavMeshInitialized>k__BackingField.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6169259830428913749, guid: e760a84f7bdf8c5438fa96d6821578e4,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8057019442765945309}
   m_SourcePrefab: {fileID: 100100000, guid: e760a84f7bdf8c5438fa96d6821578e4, type: 3}
+--- !u!1 &667338355913020910 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6169259830428913749, guid: e760a84f7bdf8c5438fa96d6821578e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 6692139674652968379}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8057019442765945309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667338355913020910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 0}
+  m_BuildHeightMesh: 0
 --- !u!4 &4036290014421781786 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7267835570455054497, guid: e760a84f7bdf8c5438fa96d6821578e4,
