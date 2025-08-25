@@ -122,24 +122,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!195 &283815327 stripped
-NavMeshAgent:
-  m_CorrespondingSourceObject: {fileID: 6228993934557779649, guid: 0855ba06b5c2c5f4e851d163bd231c72,
-    type: 3}
-  m_PrefabInstance: {fileID: 544444899}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &283815328 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6419624637843326928, guid: 0855ba06b5c2c5f4e851d163bd231c72,
-    type: 3}
-  m_PrefabInstance: {fileID: 544444899}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dff7f1039c60227448beaefa98b61234, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &544444899
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -607,91 +589,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3710599248863452202, guid: d30d902da47946b40a45b10c93384f6e,
-        type: 3}
-      propertyPath: Agents.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3710599248863452202, guid: d30d902da47946b40a45b10c93384f6e,
-        type: 3}
-      propertyPath: Agents.Array.data[0]
-      value: 
-      objectReference: {fileID: 283815327}
-    - target: {fileID: 3710599248863452202, guid: d30d902da47946b40a45b10c93384f6e,
-        type: 3}
-      propertyPath: <OnNavMeshInitialized>k__BackingField.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3710599248863452202, guid: d30d902da47946b40a45b10c93384f6e,
-        type: 3}
-      propertyPath: <OnNavMeshInitialized>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3710599248863452202, guid: d30d902da47946b40a45b10c93384f6e,
-        type: 3}
-      propertyPath: <OnNavMeshInitialized>k__BackingField.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3710599248863452202, guid: d30d902da47946b40a45b10c93384f6e,
-        type: 3}
-      propertyPath: <OnNavMeshInitialized>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 283815328}
-    - target: {fileID: 3710599248863452202, guid: d30d902da47946b40a45b10c93384f6e,
-        type: 3}
-      propertyPath: <OnNavMeshInitialized>k__BackingField.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 283815327}
-    - target: {fileID: 3710599248863452202, guid: d30d902da47946b40a45b10c93384f6e,
-        type: 3}
-      propertyPath: <OnNavMeshInitialized>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3710599248863452202, guid: d30d902da47946b40a45b10c93384f6e,
-        type: 3}
-      propertyPath: <OnNavMeshInitialized>k__BackingField.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3710599248863452202, guid: d30d902da47946b40a45b10c93384f6e,
-        type: 3}
-      propertyPath: <OnNavMeshInitialized>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: set_enabled
-      objectReference: {fileID: 0}
-    - target: {fileID: 3710599248863452202, guid: d30d902da47946b40a45b10c93384f6e,
-        type: 3}
-      propertyPath: <OnNavMeshInitialized>k__BackingField.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: set_enabled
-      objectReference: {fileID: 0}
-    - target: {fileID: 3710599248863452202, guid: d30d902da47946b40a45b10c93384f6e,
-        type: 3}
-      propertyPath: <OnNavMeshInitialized>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.Behaviour, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 3710599248863452202, guid: d30d902da47946b40a45b10c93384f6e,
-        type: 3}
-      propertyPath: <OnNavMeshInitialized>k__BackingField.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UnityEngine.Behaviour, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 3710599248863452202, guid: d30d902da47946b40a45b10c93384f6e,
-        type: 3}
-      propertyPath: <OnNavMeshInitialized>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3710599248863452202, guid: d30d902da47946b40a45b10c93384f6e,
-        type: 3}
-      propertyPath: <OnNavMeshInitialized>k__BackingField.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3710599248863452202, guid: d30d902da47946b40a45b10c93384f6e,
-        type: 3}
-      propertyPath: <OnNavMeshInitialized>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 3710599248863452202, guid: d30d902da47946b40a45b10c93384f6e,
-        type: 3}
-      propertyPath: <OnNavMeshInitialized>k__BackingField.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4762407799009169239, guid: d30d902da47946b40a45b10c93384f6e,
         type: 3}
