@@ -36,11 +36,22 @@ namespace Augma.GenerationNavMeshLinks
 
         // Holds all BoxColliders found in children
         private BoxCollider[] _allBoxes;
+        
+        private GameObject _NavMeshLinksGO;
 
         private void Start()
         {
             MRUK.Instance.RegisterSceneLoadedCallback(DoGenerateLinks);
             
+            _NavMeshLinksGO = new GameObject
+            {
+                name = "NavMeshLinks", 
+                transform =
+                {
+                    parent = transform
+                }
+            };
+
             //MRUK.Instance.RoomCreatedEvent.AddListener(DoGenerateLinksEvent);
         }
 
@@ -158,15 +169,17 @@ namespace Augma.GenerationNavMeshLinks
         // Creates a NavMeshLink component on a collider
         private NavMeshLink CreateLinkOnCollider(Collider coll)
         {
+            //return coll.transform.root.gameObject.AddComponent<NavMeshLink>();
             return coll.gameObject.AddComponent<NavMeshLink>();
         }
 
         // Sets initial NavMeshLink properties
         private void SetNavMeshLinkData(NavMeshLink link, Collider a)
         {
-            link.startPoint = a.transform.InverseTransformPoint(_closestPointFromAToB);
-            link.endPoint = a.transform.InverseTransformPoint(_closestPointFromBToA);
-            link.agentTypeID = 2;
+            Vector3 apos = a.transform.InverseTransformPoint(_closestPointFromAToB);
+            Vector3 bpos = a.transform.InverseTransformPoint(_closestPointFromBToA);
+            link.startPoint = apos;
+            link.endPoint = bpos;
             link.bidirectional = bidirectionalLinks;
             link.width = linkWidth;
         }

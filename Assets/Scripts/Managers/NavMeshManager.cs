@@ -4,10 +4,11 @@ using Augma.GenerationNavMeshLinks;
 using Framework.Generics.Pattern.SingletonPattern;
 using Meta.XR.MRUtilityKit;
 using Misc;
-using Oculus.Interaction.Surfaces;
+using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
+using NavMeshSurface = Oculus.Interaction.Surfaces.NavMeshSurface;
 
 namespace Managers
 {
@@ -42,12 +43,18 @@ namespace Managers
         {
             yield return new WaitForSeconds(1f);
             
-            NavMeshSurface x = GetComponentInChildren<NavMeshSurface>();
+            NavMeshSurface surf = GetComponentInChildren<NavMeshSurface>();
             int count = NavMesh.GetSettingsCount();
             int id = NavMesh.GetSettingsByIndex(count - 1).agentTypeID;
             
             NavMeshAgent agent = FindObjectOfType<NavMeshAgent>();
             agent.agentTypeID = id;
+
+            NavMeshLink[] linkList = FindObjectsOfType<NavMeshLink>();
+            foreach (NavMeshLink link in linkList)
+            {
+                link.agentTypeID = id;
+            }
         }
     }
 }
