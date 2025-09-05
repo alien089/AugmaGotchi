@@ -39,6 +39,10 @@ namespace Augma.GenerationNavMeshLinks
         
         private GameObject _NavMeshLinksGO;
 
+        private bool floorNow = false;
+        public List<Vector3> _floorAGlobal;
+        public List<Vector3> _floorBGlobal;
+
         private void Start()
         {
             MRUK.Instance.RegisterSceneLoadedCallback(DoGenerateLinks);
@@ -79,6 +83,7 @@ namespace Augma.GenerationNavMeshLinks
         {
             IfDistanceOkThenConnect(surfacesOnFloor, surfacesOnFloor);
             _alreadyDone.Clear();
+            floorNow = true;
             IfDistanceOkThenConnect(floor, surfacesOnFloor);
         }
 
@@ -169,48 +174,54 @@ namespace Augma.GenerationNavMeshLinks
         // Creates a NavMeshLink component on a collider
         private NavMeshLink CreateLinkOnCollider(Collider coll)
         {
-            //return coll.transform.root.gameObject.AddComponent<NavMeshLink>();
+            return _NavMeshLinksGO.gameObject.AddComponent<NavMeshLink>();
             return coll.gameObject.AddComponent<NavMeshLink>();
         }
 
         // Sets initial NavMeshLink properties
         private void SetNavMeshLinkData(NavMeshLink link, Collider a)
         {
-            Vector3 apos = a.transform.InverseTransformPoint(_closestPointFromAToB);
-            Vector3 bpos = a.transform.InverseTransformPoint(_closestPointFromBToA);
-            link.startPoint = apos;
-            link.endPoint = bpos;
+            Vector3 apos = _NavMeshLinksGO.transform.InverseTransformPoint(_closestPointFromAToB);
+            Vector3 bpos = _NavMeshLinksGO.transform.InverseTransformPoint(_closestPointFromBToA);
+            link.startPoint = _closestPointFromAToB;
+            link.endPoint = _closestPointFromBToA;
             link.bidirectional = bidirectionalLinks;
             link.width = linkWidth;
+
+            if (floorNow == true)
+            {
+                _floorAGlobal.Add(_closestPointFromAToB);
+                _floorBGlobal.Add(_closestPointFromBToA);
+            }
         }
 
         // Adjusts NavMeshLink start and end points inward for better alignment
         private void AdjustLinks(NavMeshLink link, Collider a, Collider b)
         {
-            var aCenter = GetColliderCenter(a);
+            Vector3 aCenter = GetColliderCenter(a);
 
-            var directionFromACenterToLinkStart = -(_closestPointFromAToB - aCenter).normalized;
+            Vector3 directionFromACenterToLinkStart = -(_closestPointFromAToB - aCenter).normalized;
             if (debugLines == true)
             {
                 Debug.DrawRay(_closestPointFromAToB, directionFromACenterToLinkStart, Color.green, 99);
             }
 
             Ray aRay = new Ray(_closestPointFromAToB, directionFromACenterToLinkStart);
-            var aPos = aRay.GetPoint(linkCompenstationAmount);
+            Vector3 aPos = aRay.GetPoint(linkCompenstationAmount);
 
-            var bCenter = GetColliderCenter(b);
+            Vector3 bCenter = GetColliderCenter(b);
 
-            var directionFromBTransformToLinkEnd = -(_closestPointFromBToA - bCenter).normalized;
+            Vector3 directionFromBTransformToLinkEnd = -(_closestPointFromBToA - bCenter).normalized;
             if (debugLines == true)
             {
                 Debug.DrawRay(_closestPointFromBToA, directionFromBTransformToLinkEnd, Color.red, 99);
             }
 
             Ray bRay = new Ray(_closestPointFromBToA, directionFromBTransformToLinkEnd);
-            var bPos = bRay.GetPoint(linkCompenstationAmount);
+            Vector3 bPos = bRay.GetPoint(linkCompenstationAmount);
 
-            link.startPoint = a.transform.InverseTransformPoint(aPos);
-            link.endPoint = a.transform.InverseTransformPoint(bPos);
+            link.startPoint = _NavMeshLinksGO.transform.InverseTransformPoint(aPos);
+            link.endPoint = _NavMeshLinksGO.transform.InverseTransformPoint(bPos);
         }
         
         // Returns the world position of a collider center

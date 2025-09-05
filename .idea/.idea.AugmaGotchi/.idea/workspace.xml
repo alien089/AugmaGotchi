@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d7b1ed3e-decc-455b-a3ef-083600f08c3a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AugmaGotchi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AugmaGotchi/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GameManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GameManager.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NavMesh/NavMeshSystem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/NavMesh/NavMeshSystem.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NavMesh/Telemetry.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/NavMesh/Telemetry.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NavMeshAgentRed.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NavMeshAgentRed.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/scn_PlayScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/scn_PlayScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/NavMeshManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/NavMeshManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/NavMeshLink/GenerateNavLinks.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NavMeshLink/GenerateNavLinks.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -123,13 +120,15 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="26716">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="26716" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
-        <list />
+        <list>
+          <MonoRuntime />
+        </list>
       </option>
       <option name="selectedOptions">
         <list />
@@ -197,6 +196,8 @@
       <workItem from="1755866468144" duration="1698000" />
       <workItem from="1756128263512" duration="3362000" />
       <workItem from="1756295643073" duration="13451000" />
+      <workItem from="1756652628914" duration="811000" />
+      <workItem from="1757104966140" duration="6085000" />
     </task>
     <servers />
   </component>
@@ -255,6 +256,19 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/NavMeshLink/GenerateNavLinks.cs</url>
+          <line>86</line>
+          <properties documentPath="C:\Users\Gabriel\Documents\AProjects\Exams\Specialization Project\AugmaGotchi\Assets\Scripts\NavMeshLink\GenerateNavLinks.cs" containingFunctionPresentation="Method 'ConnectThemAll'">
+            <startOffsets>
+              <option value="2735" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2783" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="66" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
