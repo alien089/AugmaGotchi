@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Character_System.Entity_Caress_System;
 using Character_System.Entity_Food_System;
+using Character_System.Entity_Toy_System;
 using Character_System.StateMachine;
 using Enums;
 using Managers;
@@ -16,21 +17,28 @@ namespace Character_System
     {
         [SerializeField] private GameObject _xFoodComponentPrefab;
         [SerializeField] private GameObject _xCaressComponentPrefab;
+        [SerializeField] private GameObject _xToyComponentPrefab;
 
         private EntityStateManager _xEntityStateManager;
         private Dictionary<EntityStates, bool> _mStateFlags = new Dictionary<EntityStates, bool>();
 
         private FoodComponent _xFoodComponent;
         private CaressComponent _xCaressComponent;
+        private ToyComponent _xToyComponent;
+        
+        private OppyCharacterController _xOppyCharacterController;
 
         public FoodComponent XFoodComponent { get => _xFoodComponent; }
         public CaressComponent XCaressComponent { get => _xCaressComponent; }
+        public ToyComponent XToyComponent { get => _xToyComponent; }
+        public OppyCharacterController XOppyCharacterController { get => _xOppyCharacterController; }
 
         // Initializes state manager, event registrations, initial flags, and component instantiation.
         private void Start()
         {
             // Initialize state manager and set initial state to IDLE.
-            _xEntityStateManager = new EntityStateManager(this, GetComponent<OppyCharacterController>());
+            _xOppyCharacterController = GetComponent<OppyCharacterController>();
+            _xEntityStateManager = new EntityStateManager(this, _xOppyCharacterController);
             _xEntityStateManager.CurrentState = _xEntityStateManager.StatesList[EntityStates.IDLE];
 
             // Register to listen for state change events.
@@ -45,10 +53,14 @@ namespace Character_System
             // Instantiate Food and Caress component prefabs as children.
             Instantiate(_xFoodComponentPrefab, transform.position, Quaternion.identity).transform.SetParent(transform);
             Instantiate(_xCaressComponentPrefab, transform.position, Quaternion.identity).transform.SetParent(transform);
+            Instantiate(_xToyComponentPrefab, transform.position, Quaternion.identity).transform.SetParent(transform);
 
             // Cache references to the instantiated components.
             _xFoodComponent = GetComponentInChildren<FoodComponent>();
             _xCaressComponent = GetComponentInChildren<CaressComponent>();
+            _xToyComponent = GetComponentInChildren<ToyComponent>();
+
+            GameManager.Instance.EventManager.TriggerEvent(ToyEventList.GET_NAVMESH_AGENT);
         }
 
         // Updates current state each frame and calls its OnUpdate.

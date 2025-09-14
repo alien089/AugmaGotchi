@@ -2241,7 +2241,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5271905555057483732}
-  - component: {fileID: 5684674209100456699}
   m_Layer: 0
   m_Name: Oppy_Urig
   m_TagString: Untagged
@@ -2265,27 +2264,6 @@ Transform:
   - {fileID: 3528033276855741773}
   m_Father: {fileID: 806153985982815716}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &5684674209100456699
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4739100756724618272}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: a9bcfc3da5a1a0d4f93ba0db7ab4484f, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4818328819030582993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2976,9 +2954,9 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: a9bcfc3da5a1a0d4f93ba0db7ab4484f, type: 3}
   m_Controller: {fileID: 9100000, guid: e0682c78f336ea74ea53278c56f2663d, type: 2}
-  m_CullingMode: 0
+  m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -3107,6 +3085,8 @@ MonoBehaviour:
   _xFoodComponentPrefab: {fileID: 6822104663950317443, guid: 87b704976a5a9d14a85fdc1439ae6203,
     type: 3}
   _xCaressComponentPrefab: {fileID: 2553401241998586229, guid: 2ebec4b9f5429b04b8e47d73c189c2c5,
+    type: 3}
+  _xToyComponentPrefab: {fileID: 6822104663950317443, guid: bf76be0cd57165c45843792fdb48c3bd,
     type: 3}
 --- !u!1 &6277746039609309932
 GameObject:

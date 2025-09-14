@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fIncrementValue: 0
+  fVelocityThreshold: 0.1
 --- !u!1 &5656987521171088969
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,14 +12,19 @@ using NavMeshSurface = Oculus.Interaction.Surfaces.NavMeshSurface;
 
 namespace Managers
 {
+    // Central controller that initializes NavMesh-related components,
+    // ensures proper agent type assignment, and activates runtime NavMesh linking.
     public class NavMeshManager : MonoBehaviour
     {
+        // Cached references to scene components involved in navigation.
         private SceneNavigation _sceneNavigation;
         private EffectMesh _effectMesh;
         private GenerateNavLinks _generateNavLinks;
 
+        // Called when the object is instantiated, before Start().
         public void Awake()
         {
+            // Find and temporarily disable key components so we can enable them in a controlled order.
             _sceneNavigation = FindObjectOfType<SceneNavigation>();
             _sceneNavigation.enabled = false;
             
@@ -30,26 +35,32 @@ namespace Managers
             _generateNavLinks.enabled = false;
         }
 
+        // Called on the first frame after Awake().
         private void Start()
         {
+            // Re-enable components in a defined sequence once the scene is ready.
             _effectMesh.enabled = true;
             _generateNavLinks.enabled = true;
             _sceneNavigation.enabled = true;
 
-            StartCoroutine(SetAgentNavMesh());
+            GameManager.Instance.EventManager.Register(ToyEventList.GET_NAVMESH_AGENT, SetAgentNavMesh);
         }
 
-        private IEnumerator SetAgentNavMesh()
+        // Waits briefly to ensure NavMesh data is available, then sets the agent type for both the NavMeshAgent and all generated links.
+        private void SetAgentNavMesh(object[] param)
         {
-            yield return new WaitForSeconds(1f);
-            
+            // Retrieve the NavMeshSurface inside this GameObject's children.
             NavMeshSurface surf = GetComponentInChildren<NavMeshSurface>();
+
+            // Obtain the ID of the most recently defined NavMesh agent type.
             int count = NavMesh.GetSettingsCount();
             int id = NavMesh.GetSettingsByIndex(count - 1).agentTypeID;
             
+            // Assign this agent type to the single NavMeshAgent in the scene.
             NavMeshAgent agent = FindObjectOfType<NavMeshAgent>();
             agent.agentTypeID = id;
 
+            // Apply the same agent type to every existing NavMeshLink so the agent can traverse them.
             NavMeshLink[] linkList = FindObjectsOfType<NavMeshLink>();
             foreach (NavMeshLink link in linkList)
             {

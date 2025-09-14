@@ -23,7 +23,6 @@ namespace Framework.Generics.Pattern.StatePattern
         public virtual void OnEnter()
         {
             
-
         }
 
         /// <summary>

@@ -16,7 +16,7 @@ namespace UI_System
         // Registers event, collects stat UI components and disables canvas initially.
         void Start()
         {
-            GameManager.Instance.EventManager.Register(EntityEventList.GIVE_Entity_TO_UI, GetEntity);
+            GameManager.Instance.EventManager.Register(EntityEventList.GIVE_ENTITY_TO_UI, GetEntity);
             
             // Collect all StatUIComponents from children and map them by their Stats type
             StatUIComponent[] tmp = transform.GetComponentsInChildren<StatUIComponent>();
@@ -51,7 +51,7 @@ namespace UI_System
         // Unregisters the event listener on application quit.
         private void OnApplicationQuit()
         {
-            GameManager.Instance.EventManager.Unregister(EntityEventList.GIVE_Entity_TO_UI, GetEntity);
+            GameManager.Instance.EventManager.Unregister(EntityEventList.GIVE_ENTITY_TO_UI, GetEntity);
         }
     }
 }

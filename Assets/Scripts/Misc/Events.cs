@@ -11,12 +11,12 @@ public static class EntityEventList
     /// <summary>
     /// params: none
     /// </summary>
-    public static string SPAWN_Entity = "SPAWN_Entity"; 
+    public static string SPAWN_ENTITY = "SPAWN_ENTITY"; 
     
     /// <summary>
     /// params: EntityManager class instance
     /// </summary>
-    public static string GIVE_Entity_TO_UI = "GIVE_Entity_TO_UI";
+    public static string GIVE_ENTITY_TO_UI = "GIVE_ENTITY_TO_UI";
     
     /// <summary>
     /// params: EntityStates enum
@@ -24,7 +24,7 @@ public static class EntityEventList
     public static string CHANGE_ENTITY_STATE = "CHANGE_ENTITY_STATE";
     
     /// <summary>
-    /// params: EntityStates enum
+    /// params: ToyStates enum
     /// </summary>
     public static string CHANGE_TOY_STATE = "CHANGE_TOY_STATE";
     
@@ -96,6 +96,11 @@ public static class ToyEventList
     /// <summary>
     /// params: none 
     /// </summary>
+    public static string GET_NAVMESH_AGENT = "GET_NAVMESH_AGENT"; 
+    
+    /// <summary>
+    /// params: none 
+    /// </summary>
     public static string RESPAWN_TOY = "RESPAWN_TOY"; 
     
     /// <summary>
@@ -109,7 +114,17 @@ public static class ToyEventList
     public static string TOY_UNGRABBED = "TOY_UNGRABBED"; 
     
     /// <summary>
-    /// params: Stats statType, float incrementValue
+    /// params: Stats statType, Vector3 toyFinalPosition
     /// </summary>
     public static string TOY_THROWN = "TOY_THROWN"; 
+    
+    /// <summary>
+    /// params: Transform entityTransform
+    /// </summary>
+    public static string TOY_COLLECTED = "TOY_COLLECTED"; 
+    
+    /// <summary>
+    /// params: none
+    /// </summary>
+    public static string TOY_RETURNED = "TOY_RETURNED"; 
 }

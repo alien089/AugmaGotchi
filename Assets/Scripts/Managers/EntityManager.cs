@@ -24,7 +24,7 @@ namespace Managers
         // Register event listeners on start
         void Start()
         {
-            GameManager.Instance.EventManager.Register(EntityEventList.SPAWN_Entity, SpawnEntity);
+            GameManager.Instance.EventManager.Register(EntityEventList.SPAWN_ENTITY, SpawnEntity);
             GameManager.Instance.EventManager.Register(FoodEventList.FOOD_GIVEN, IncrementStatsEvent);
             GameManager.Instance.EventManager.Register(CaressEventList.CARESS_GIVEN, IncrementStatsEvent);
         }
@@ -32,7 +32,7 @@ namespace Managers
         // Unregister event listeners on application quit
         private void OnApplicationQuit()
         {
-            GameManager.Instance.EventManager.Unregister(EntityEventList.SPAWN_Entity, SpawnEntity);
+            GameManager.Instance.EventManager.Unregister(EntityEventList.SPAWN_ENTITY, SpawnEntity);
             GameManager.Instance.EventManager.Unregister(FoodEventList.FOOD_GIVEN, IncrementStatsEvent);
             GameManager.Instance.EventManager.Unregister(CaressEventList.CARESS_GIVEN, IncrementStatsEvent);
         }
@@ -66,7 +66,7 @@ namespace Managers
             if (_xEntity != null) return;
 
             _xEntity = Instantiate(EntityPrefab, PlayerController.Instance.FPlayerPosition.position + new Vector3(0,0,0.4f), Quaternion.identity);
-            GameManager.Instance.EventManager.TriggerEvent(EntityEventList.GIVE_Entity_TO_UI, this);
+            GameManager.Instance.EventManager.TriggerEvent(EntityEventList.GIVE_ENTITY_TO_UI, this);
 
             foreach (var x in _fMaxValuesStats)
             {

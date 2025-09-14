@@ -2,8 +2,9 @@
 {
     public enum ToyStates
     {
-        JUMP,
+        IDLE,
         MOVE,
-        GRAB
+        GRAB,
+        RETURN
     }
 }

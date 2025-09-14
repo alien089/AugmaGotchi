@@ -10,21 +10,22 @@ namespace Character_System.Entity_Toy_System.Toy_State_Machine
     public class ToyStateManager : StatesMachine<ToyStates>
     {
         public EntityToyState XToyController;
-        private OppyCharacterController _xOppyCharacterController;
+        public OppyCharacterController XOppyCharacterController;
         
         // Constructor that links the state manager to its entity controller.
-        public ToyStateManager(EntityToyState controller, OppyCharacterController characterController) : base()
-        {
+        public ToyStateManager(EntityToyState controller) : base()
+        { 
             XToyController = controller;
-            _xOppyCharacterController = characterController;
+            XOppyCharacterController = controller.XOppyCharacterController;
         }
 
         // Initializes the dictionary of states with specific entity state instances.
         protected override void InitStates()
         {
-            StatesList.Add(ToyStates.MOVE, new ToyMoveState(ToyStates.MOVE, _xOppyCharacterController, this));
-            StatesList.Add(ToyStates.JUMP, new ToyJumpState(ToyStates.MOVE, this));
-            StatesList.Add(ToyStates.GRAB, new ToyGrabState(ToyStates.MOVE, this));
+            StatesList.Add(ToyStates.MOVE, new ToyMoveState(ToyStates.MOVE, XOppyCharacterController, this));
+            StatesList.Add(ToyStates.GRAB, new ToyGrabState(ToyStates.GRAB, this));
+            StatesList.Add(ToyStates.RETURN, new ToyReturnState(ToyStates.RETURN, this));
+            StatesList.Add(ToyStates.IDLE, new ToyIdleState(ToyStates.IDLE, this));
         }
     }
 }

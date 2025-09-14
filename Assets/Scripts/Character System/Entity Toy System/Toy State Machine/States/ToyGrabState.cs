@@ -2,7 +2,9 @@
 using Character_System.StateMachine;
 using Enums;
 using Framework.Generics.Pattern.StatePattern;
+using Managers;
 using Meta.XR.MRUtilityKitSamples.PassthroughRelighting;
+using UnityEngine;
 
 namespace Character_System.Entity_Toy_System.Toy_State_Machine.States
 {
@@ -10,7 +12,6 @@ namespace Character_System.Entity_Toy_System.Toy_State_Machine.States
     public class ToyGrabState : State<ToyStates>
     {
         private ToyStateManager _xEntityStateManager;
-        private Vector3 _xToyPosition; 
         
         // Constructor linking this state to its state manager.
         public ToyGrabState(ToyStates stateID, StatesMachine<ToyStates> stateMachine = null) : base(stateID, stateMachine)
@@ -21,13 +22,12 @@ namespace Character_System.Entity_Toy_System.Toy_State_Machine.States
         public override void OnEnter()
         {
             base.OnEnter();
+            Transform transformEntity = _xEntityStateManager.XToyController.XEntityStateManager.XEntityController.transform;
+            GameManager.Instance.EventManager.TriggerEvent(ToyEventList.TOY_COLLECTED, transformEntity);
+            
+            GameManager.Instance.EventManager.TriggerEvent(EntityEventList.CHANGE_TOY_STATE, ToyStates.RETURN);
         }
-        
-        public override void OnUpdate()
-        {
-            base.OnUpdate();
-        }
-        
+
         public override void OnExit()
         {
             base.OnExit();

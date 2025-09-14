@@ -3,50 +3,62 @@ using System.Collections.Generic;
 using Meta.XR.MRUtilityKit;
 using UnityEngine;
 using Unity.AI.Navigation;
-using UnityEngine.Serialization;
 
 namespace Augma.GenerationNavMeshLinks
 {
+    // Dynamically generates Unity NavMeshLinks between spatial anchors detected by MRUK.
+    // Scans room anchors tagged as obstacles/floors and connects nearby colliders
+    // so that AI agents can navigate across separate walkable areas.
     public class GenerateNavLinks : MonoBehaviour
     {
-        // Width of the generated NavMeshLink
+        // Width of each generated NavMeshLink.
         public float linkWidth;
 
-        // Whether the generated links should be bidirectional
+        // If true, agents can traverse the link in both directions.
         public bool bidirectionalLinks;
 
-        // Temporary storage for closest connection points
+        // Stores the closest points between the two colliders currently being linked.
         private Vector3 _closestPointFromAToB;
         private Vector3 _closestPointFromBToA;
 
-        // How far the link endpoints should be adjusted inward (compensation)
+        // Extra offset applied when positioning the start/end of each link to avoid overlap.
         public float linkCompenstationAmount;
 
-        // Lists of categorized colliders
+        // BoxColliders representing non-floor surfaces detected on the floor level.
         public List<BoxCollider> surfacesOnFloor = new List<BoxCollider>();
+        // MeshColliders representing the floor itself.
         public List<MeshCollider> floor = new List<MeshCollider>();
+
+        // Keeps track of colliders that have already been processed to avoid duplicate links.
         private List<Collider> _alreadyDone = new List<Collider>();
+        // Stores all created NavMeshLink components for later cleanup.
         private List<NavMeshLink> _navMeshLinks = new List<NavMeshLink>();
         
-        // Toggle debug drawing of rays in the scene
+        // If true, draw debug rays in the Scene view for visual inspection.
         public bool debugLines;
 
-        // Max distance threshold to consider two objects "connected"
+        // Maximum distance allowed between two colliders to create a link.
         public float fDistanceThreshold;
 
-        // Holds all BoxColliders found in children
+        // Cached list of all box colliders in the scene if needed.
         private BoxCollider[] _allBoxes;
         
+        // Parent GameObject that will contain all generated NavMeshLink components.
         private GameObject _NavMeshLinksGO;
 
-        private bool floorNow = false;
+        // Indicates when we're linking floor meshes to surface colliders.
+        private bool _bfloorNow = false;
+        // Stores global start and end positions of links created when connecting floor objects.
         public List<Vector3> _floorAGlobal;
         public List<Vector3> _floorBGlobal;
 
+        // Called once on start-up: sets up callbacks and prepares a container for NavMeshLinks.
         private void Start()
         {
+            // Register a callback to automatically generate links once MRUK finishes loading the scene.
             MRUK.Instance.RegisterSceneLoadedCallback(DoGenerateLinks);
             
+            // Create an empty GameObject to parent all generated NavMeshLinks for easy cleanup.
             _NavMeshLinksGO = new GameObject
             {
                 name = "NavMeshLinks", 
@@ -56,10 +68,11 @@ namespace Augma.GenerationNavMeshLinks
                 }
             };
 
-            //MRUK.Instance.RoomCreatedEvent.AddListener(DoGenerateLinksEvent);
+            // Optionally, you could hook into the RoomCreatedEvent instead of the scene callback.
+            // MRUK.Instance.RoomCreatedEvent.AddListener(DoGenerateLinksEvent);
         }
 
-        //trigger link generation in Editor
+        // Entry point when the scene is fully loaded: clears cached lists, collects anchors, and links them.
         public void DoGenerateLinks()
         {
             surfacesOnFloor.Clear();
@@ -69,6 +82,7 @@ namespace Augma.GenerationNavMeshLinks
             ConnectThemAll();
         }
         
+        // Alternative entry point if invoked directly from an MRUK room event.
         public void DoGenerateLinksEvent(MRUKRoom room)
         {
             surfacesOnFloor.Clear();
@@ -78,16 +92,18 @@ namespace Augma.GenerationNavMeshLinks
             ConnectThemAll();
         }
 
-        // Connects all categorized objects together based on distance rules
+        // Connects all eligible colliders by creating NavMeshLinks wherever the distance threshold is met.
         private void ConnectThemAll()
         {
+            // First, connect all obstacle surfaces to each other.
             IfDistanceOkThenConnect(surfacesOnFloor, surfacesOnFloor);
             _alreadyDone.Clear();
-            floorNow = true;
+            _bfloorNow = true;
+            // Then, connect floor meshes to obstacle surfaces.
             IfDistanceOkThenConnect(floor, surfacesOnFloor);
         }
 
-        // Finds all NavLinkTags and colliders in children
+        // Collects anchors with specific MRUK tags and separates them into floor or surface lists.
         public void GetNavLinkTagTypes(MRUKRoom room = null)
         {
             if (!MRUK.Instance)
@@ -102,12 +118,15 @@ namespace Augma.GenerationNavMeshLinks
             
             List<MRUKAnchor> sceneAnchors = rooms[0].Anchors;
 
+            // Fetch the obstacle label definition from a SceneNavigation object in the scene.
             MRUKAnchor.SceneLabels x = FindObjectOfType<SceneNavigation>().SceneObstacles;
 
             foreach (var anchor in sceneAnchors)
             {
+                // Skip anchors that are not labeled as obstacles.
                 if (!anchor.HasAnyLabel(x)) continue;
 
+                // Distinguish between anchors tagged as floor and other surfaces.
                 if (!anchor.HasAnyLabel(MRUKAnchor.SceneLabels.FLOOR))
                     surfacesOnFloor.Add(anchor.GetComponentInChildren<BoxCollider>());
                 else
@@ -115,7 +134,7 @@ namespace Augma.GenerationNavMeshLinks
             }
         }
         
-        // Connects colliders only if they are close enough
+        // Iterates through every pair of colliders in two lists and connects them if close enough.
         private void IfDistanceOkThenConnect<T, T2>(List<T> aList, List<T2> bList)
             where T : Collider 
             where T2 : Collider
@@ -126,8 +145,10 @@ namespace Augma.GenerationNavMeshLinks
 
                 foreach (var colliderY in bList)
                 {
+                    // Avoid processing the same pair twice.
                     if (_alreadyDone.Contains(colliderY)) continue;
 
+                    // Check if the two colliders are within the allowed distance.
                     if (IsObjectCloseEnough(colliderX, colliderY))
                     {
                         ConnectTheLinks(colliderX, colliderY);
@@ -136,10 +157,10 @@ namespace Augma.GenerationNavMeshLinks
             }
         }
 
-        // Checks if two colliders are within threshold distance
+        // Returns true if the shortest distance between two colliders is below the threshold.
         private bool IsObjectCloseEnough(Collider a, Collider b)
         {
-            // Skip if it's the same object
+            // Ignore if both colliders belong to the same GameObject.
             if (string.CompareOrdinal(a.gameObject.name, b.gameObject.name) == 0) return false;
 
             var aCenter = GetColliderCenter(a);
@@ -151,7 +172,7 @@ namespace Augma.GenerationNavMeshLinks
             return distance <= fDistanceThreshold;
         }
 
-        // Creates and configures a NavMeshLink between two colliders
+        // Creates a NavMeshLink between two colliders after computing the best connection points.
         private void ConnectTheLinks(Collider a, Collider b)
         {
             GetClosestPointsToEachOther(a, b);
@@ -162,7 +183,7 @@ namespace Augma.GenerationNavMeshLinks
             _navMeshLinks.Add(link);
         }
 
-        // Finds closest points between two colliders
+        // Computes the closest points from each collider to the other for precise link placement.
         private void GetClosestPointsToEachOther(Collider a, Collider b)
         {
             var aCenter = GetColliderCenter(a);
@@ -171,14 +192,15 @@ namespace Augma.GenerationNavMeshLinks
             _closestPointFromBToA = b.ClosestPoint(a.ClosestPoint(bCenter));
         }
 
-        // Creates a NavMeshLink component on a collider
+        // Adds a NavMeshLink component under the global container object.
         private NavMeshLink CreateLinkOnCollider(Collider coll)
         {
             return _NavMeshLinksGO.gameObject.AddComponent<NavMeshLink>();
+            // The following return is unreachable and can be removed.
             return coll.gameObject.AddComponent<NavMeshLink>();
         }
 
-        // Sets initial NavMeshLink properties
+        // Sets the main properties of a NavMeshLink, including start/end points and width.
         private void SetNavMeshLinkData(NavMeshLink link, Collider a)
         {
             Vector3 apos = _NavMeshLinksGO.transform.InverseTransformPoint(_closestPointFromAToB);
@@ -188,14 +210,15 @@ namespace Augma.GenerationNavMeshLinks
             link.bidirectional = bidirectionalLinks;
             link.width = linkWidth;
 
-            if (floorNow == true)
+            // Store the points globally if we're currently connecting floor colliders.
+            if (_bfloorNow == true)
             {
                 _floorAGlobal.Add(_closestPointFromAToB);
                 _floorBGlobal.Add(_closestPointFromBToA);
             }
         }
 
-        // Adjusts NavMeshLink start and end points inward for better alignment
+        // Applies a small positional adjustment along the inward normal to reduce clipping.
         private void AdjustLinks(NavMeshLink link, Collider a, Collider b)
         {
             Vector3 aCenter = GetColliderCenter(a);
@@ -224,7 +247,7 @@ namespace Augma.GenerationNavMeshLinks
             link.endPoint = _NavMeshLinksGO.transform.InverseTransformPoint(bPos);
         }
         
-        // Returns the world position of a collider center
+        // Computes the world-space center of a collider, with a Y offset to roughly match its top surface.
         private Vector3 GetColliderCenter(Collider coll)
         {
             Vector3 rtn;
@@ -235,6 +258,7 @@ namespace Augma.GenerationNavMeshLinks
             return rtn;
         }
 
+        // Removes all generated NavMeshLinks and clears cached collider lists.
         public void ClearNavMeshLinks()
         {
             foreach (NavMeshLink link in _navMeshLinks) Destroy(link);
@@ -244,4 +268,3 @@ namespace Augma.GenerationNavMeshLinks
         }
     }
 }
-

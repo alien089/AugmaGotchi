@@ -21,7 +21,7 @@ namespace UI_System
         private void SpawnEntity()
         {
             GetComponentInChildren<Button>().gameObject.SetActive(false);
-            GameManager.Instance.EventManager.TriggerEvent(EntityEventList.SPAWN_Entity);
+            GameManager.Instance.EventManager.TriggerEvent(EntityEventList.SPAWN_ENTITY);
         }
 
         private void SpaceSetup()

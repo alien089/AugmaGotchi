@@ -10,7 +10,7 @@ using Vector3 = UnityEngine.Vector3;
 namespace Character_System.Entity_Toy_System.Toy_State_Machine.States
 {
     // Represents the Joy state of an entity, currently with default behavior.
-    public class ToyMoveState : State<ToyStates>
+    public class ToyReturnState : State<ToyStates>
     {
         private ToyStateManager _xToyStateManager;
         
@@ -19,28 +19,30 @@ namespace Character_System.Entity_Toy_System.Toy_State_Machine.States
         private NavMeshAgent _xNavMeshAgent;
         
         // Constructor linking this state to its state manager.
-        public ToyMoveState(ToyStates stateID, OppyCharacterController characterController, StatesMachine<ToyStates> stateMachine = null) : base(stateID, stateMachine)
+        public ToyReturnState(ToyStates stateID, StatesMachine<ToyStates> stateMachine = null) : base(stateID, stateMachine)
         {
             _xToyStateManager = (ToyStateManager)stateMachine;
-            if (_xToyStateManager == null) return;
-            _xOppyCharacterController = _xToyStateManager.XOppyCharacterController;
         }
         
         public override void OnEnter()
         {
             base.OnEnter();
             _xNavMeshAgent = _xToyStateManager.XToyController.XNavMeshAgent;
-            Vector3 pos = _xToyStateManager.XToyController.XToyPosition;
-            _xNavMeshAgent.SetDestination(pos);
+            _xOppyCharacterController = _xToyStateManager.XOppyCharacterController;
+            _xNavMeshAgent.SetDestination(PlayerController.Instance.transform.position);
         }
         
         public override void OnUpdate()
         {
             base.OnUpdate();
+            
+            _xNavMeshAgent.SetDestination(PlayerController.Instance.transform.position);
+            
             if (_xNavMeshAgent.remainingDistance <= _xNavMeshAgent.stoppingDistance)
             {
-                GameManager.Instance.EventManager.TriggerEvent(EntityEventList.CHANGE_TOY_STATE, ToyStates.GRAB);
+                GameManager.Instance.EventManager.TriggerEvent(EntityEventList.CHANGE_ENTITY_STATE, EntityStates.IDLE);
                 _xNavMeshAgent.ResetPath();
+                GameManager.Instance.EventManager.TriggerEvent(ToyEventList.TOY_RETURNED);
             }
             
             if (_xNavMeshAgent.isOnOffMeshLink)

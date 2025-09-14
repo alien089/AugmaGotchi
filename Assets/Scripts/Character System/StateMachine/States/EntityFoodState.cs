@@ -18,20 +18,14 @@ namespace Character_System.StateMachine.States
         public override void OnEnter()
         {
             base.OnEnter();
-            _xEntityStateManager.xEntityController.XFoodComponent.EnableComponent(true);
-        }
-
-        // Called every frame while in the Food state; currently invokes base behavior.
-        public override void OnUpdate()
-        {
-            base.OnUpdate();
+            _xEntityStateManager.XEntityController.XFoodComponent.EnableComponent(true);
         }
 
         // Disables the FoodComponent on exiting the Food state.
         public override void OnExit()
         {
             base.OnExit();
-            _xEntityStateManager.xEntityController.XFoodComponent.EnableComponent(false);
+            _xEntityStateManager.XEntityController.XFoodComponent.EnableComponent(false);
         }
     }
 }

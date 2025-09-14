@@ -8,13 +8,15 @@ namespace Character_System.StateMachine
     // Manages entity states and initializes all possible entity states.
     public class EntityStateManager : StatesMachine<EntityStates>
     {
-        public EntityController xEntityController;
+        private EntityController _xEntityController;
         private OppyCharacterController xOppyCharacterController;
+        
+        public EntityController XEntityController { get => _xEntityController; }
 
         // Constructor that links the state manager to its entity controller.
         public EntityStateManager(EntityController controller, OppyCharacterController characterController) : base()
         {
-            xEntityController = controller;
+            _xEntityController = controller;
             xOppyCharacterController = characterController;
         }
 

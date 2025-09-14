@@ -6,9 +6,33 @@
   <component name="ChangeListManager">
     <list default="true" id="d7b1ed3e-decc-455b-a3ef-083600f08c3a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AugmaGotchi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AugmaGotchi/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NavMeshAgentRed.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NavMeshAgentRed.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Character/Entity.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Character/Entity.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Character/Scripts/OppyCharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Character/Scripts/OppyCharacterController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Character/Sys Toy/alienToy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Character/Sys Toy/alienToy.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/scn_PlayScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/scn_PlayScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/Entity Toy System/Toy State Machine/States/ToyGrabState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/Entity Toy System/Toy State Machine/States/ToyGrabState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/Entity Toy System/Toy State Machine/States/ToyJumpState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/Entity Toy System/Toy State Machine/States/ToyJumpState.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/Entity Toy System/Toy State Machine/States/ToyMoveState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/Entity Toy System/Toy State Machine/States/ToyMoveState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/Entity Toy System/Toy State Machine/ToyStateManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/Entity Toy System/Toy State Machine/ToyStateManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/Entity Toy System/ToyInteractable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/Entity Toy System/ToyInteractable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/EntityController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/EntityController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/EntityController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/EntityController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/EntityStateManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/EntityStateManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/States/EntityCaressState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/States/EntityCaressState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/States/EntityFoodState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/States/EntityFoodState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/States/EntityToyState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/States/EntityToyState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Design Patterns/State Pattern/State.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Design Patterns/State Pattern/State.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enums/ToyStates.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enums/ToyStates.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/EntityManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/EntityManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/EntityManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/EntityManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/NavMeshManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/NavMeshManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/NavMeshManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/NavMeshManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Misc/Events.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Misc/Events.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/NavMeshLink/GenerateNavLinks.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NavMeshLink/GenerateNavLinks.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI System/CanvasManagerSpawnEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI System/CanvasManagerSpawnEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI System/UIObjectsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI System/UIObjectsManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI System/UIStatsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI System/UIStatsManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,10 +144,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="26716">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="22352">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="26716" />
+      <option name="pid" value="22352" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
         <list>
@@ -198,6 +222,8 @@
       <workItem from="1756295643073" duration="13451000" />
       <workItem from="1756652628914" duration="811000" />
       <workItem from="1757104966140" duration="6085000" />
+      <workItem from="1757343546806" duration="1381000" />
+      <workItem from="1757603929490" duration="40882000" />
     </task>
     <servers />
   </component>
@@ -258,17 +284,95 @@
           <option name="timeStamp" value="59" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/NavMeshLink/GenerateNavLinks.cs</url>
-          <line>86</line>
-          <properties documentPath="C:\Users\Gabriel\Documents\AProjects\Exams\Specialization Project\AugmaGotchi\Assets\Scripts\NavMeshLink\GenerateNavLinks.cs" containingFunctionPresentation="Method 'ConnectThemAll'">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Character System/Entity Toy System/ToyInteractable.cs</url>
+          <line>50</line>
+          <properties documentPath="C:\Users\Gabriel\Documents\AProjects\Exams\Specialization Project\AugmaGotchi\Assets\Scripts\Character System\Entity Toy System\ToyInteractable.cs" containingFunctionPresentation="Method 'Update'">
             <startOffsets>
-              <option value="2735" />
+              <option value="1914" />
             </startOffsets>
             <endOffsets>
-              <option value="2783" />
+              <option value="1926" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="66" />
+          <option name="timeStamp" value="82" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Character System/Entity Toy System/Toy State Machine/States/ToyMoveState.cs</url>
+          <line>23</line>
+          <properties documentPath="C:\Users\Gabriel\Documents\AProjects\Exams\Specialization Project\AugmaGotchi\Assets\Scripts\Character System\Entity Toy System\Toy State Machine\States\ToyMoveState.cs" containingFunctionPresentation="Constructor 'ToyMoveState'">
+            <startOffsets>
+              <option value="903" />
+            </startOffsets>
+            <endOffsets>
+              <option value="953" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="87" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Character System/EntityController.cs</url>
+          <line>40</line>
+          <properties documentPath="C:\Users\Gabriel\Documents\AProjects\Exams\Specialization Project\AugmaGotchi\Assets\Scripts\Character System\EntityController.cs" containingFunctionPresentation="Method 'Start'">
+            <startOffsets>
+              <option value="1738" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1817" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="90" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/EntityStateManager.cs</url>
+          <line>18</line>
+          <properties documentPath="C:\Users\Gabriel\Documents\AProjects\Exams\Specialization Project\AugmaGotchi\Assets\Scripts\Character System\StateMachine\EntityStateManager.cs" containingFunctionPresentation="Constructor 'EntityStateManager'">
+            <startOffsets>
+              <option value="776" />
+            </startOffsets>
+            <endOffsets>
+              <option value="808" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="92" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Character System/Entity Toy System/Toy State Machine/States/ToyMoveState.cs</url>
+          <line>31</line>
+          <properties documentPath="C:\Users\Gabriel\Documents\AProjects\Exams\Specialization Project\AugmaGotchi\Assets\Scripts\Character System\Entity Toy System\Toy State Machine\States\ToyMoveState.cs" containingFunctionPresentation="Method 'OnEnter'">
+            <startOffsets>
+              <option value="1197" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1261" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="93" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Character System/Entity Toy System/Toy State Machine/ToyStateManager.cs</url>
+          <line>18</line>
+          <properties documentPath="C:\Users\Gabriel\Documents\AProjects\Exams\Specialization Project\AugmaGotchi\Assets\Scripts\Character System\Entity Toy System\Toy State Machine\ToyStateManager.cs" containingFunctionPresentation="Constructor 'ToyStateManager'">
+            <startOffsets>
+              <option value="762" />
+            </startOffsets>
+            <endOffsets>
+              <option value="825" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="94" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Character System/StateMachine/States/EntityToyState.cs</url>
+          <line>31</line>
+          <properties documentPath="C:\Users\Gabriel\Documents\AProjects\Exams\Specialization Project\AugmaGotchi\Assets\Scripts\Character System\StateMachine\States\EntityToyState.cs" containingFunctionPresentation="Constructor 'EntityToyState'">
+            <startOffsets>
+              <option value="1480" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1528" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="95" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

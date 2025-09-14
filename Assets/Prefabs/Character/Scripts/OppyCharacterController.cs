@@ -21,6 +21,7 @@
 using System.Collections;
 using Meta.XR.Samples;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Meta.XR.MRUtilityKitSamples.PassthroughRelighting
 {
@@ -33,31 +34,14 @@ namespace Meta.XR.MRUtilityKitSamples.PassthroughRelighting
     public class OppyCharacterController : MonoBehaviour
     {
         /// <summary>
-        ///     The transform who's the forward vector for Oppy's motion
-        /// </summary>
-        [SerializeField] private Transform movementFrameOfReference;
-
-        /// <summary>
         ///     The vertical speed that Oppy will have if the jump button is pressed
         /// </summary>
         [SerializeField] private float jumpSpeed = 4;
 
-        /// <summary>
-        ///     The vertical acceleration applied to Oppy if the jump button is kept pressed
-        /// </summary>
-        [SerializeField] private float keepPressedJumpAcceleration = 1;
-
-        [SerializeField] private OVRInput.Button jumpButton;
-
-        /// <summary>
-        ///     The transform in front of which Oppy will be respawned
-        /// </summary>
-        [SerializeField] private Transform respawnTransform;
-
         [SerializeField] private float maximumLinearSpeed = 0.9f;
         [SerializeField] private float gravity = -9.8f;
 
-        private Animator _animator;
+        [FormerlySerializedAs("_animator")] private Animator _animator;
         private CharacterController _characterController;
 
         private Vector3 _moveVelocity;
@@ -68,7 +52,7 @@ namespace Meta.XR.MRUtilityKitSamples.PassthroughRelighting
 
         private const float JumpDelay = 0.16f;
 
-        private enum JumpingState
+        public enum JumpingState
         {
             Grounded,
             JumpStarted,
@@ -87,18 +71,6 @@ namespace Meta.XR.MRUtilityKitSamples.PassthroughRelighting
             // HandleLocomotion();
             // HandleJumping();
             // ApplyMotion();
-        }
-
-        public void Respawn()
-        {
-            if (_characterController == null)
-            {
-                _characterController = GetComponent<CharacterController>();
-            }
-
-            _characterController.enabled = false;
-            transform.position = respawnTransform.position + respawnTransform.forward * 0.3f;
-            _characterController.enabled = true;
         }
 
         private void GetLocomotionInput()
@@ -124,28 +96,10 @@ namespace Meta.XR.MRUtilityKitSamples.PassthroughRelighting
         {
             bool noMovementInput = Mathf.Abs(_motionInput.y) == 0 && Mathf.Abs(_motionInput.x) == 0;
             _animator.SetBool("Running", !noMovementInput && _characterController.isGrounded);
-
-            Vector3 motionForwardDirection =
-                Vector3.ProjectOnPlane(movementFrameOfReference.forward, Vector3.up).normalized;
-            Vector3 motionRightDirection =
-                Vector3.ProjectOnPlane(movementFrameOfReference.right, Vector3.up).normalized;
-            Vector3 motionDirection = (motionForwardDirection * _motionInput.y + motionRightDirection * _motionInput.x)
-                .normalized;
-            _rotation = transform.rotation;
-
-            if (_characterController.isGrounded)
-            {
-                _moveVelocity = motionDirection * maximumLinearSpeed;
-                Vector3 lerpedMoveDirection = Vector3.Lerp(transform.forward, motionDirection, 0.6f);
-                _rotation = Quaternion.LookRotation(lerpedMoveDirection);
-            }
         }
 
         private void HandleJumping()
         {
-            bool jumpButtonDown = OVRInput.GetDown(jumpButton);
-            bool jumpButtonPressed = OVRInput.Get(jumpButton);
-
             if (_jumpRequested)
             {
                 _moveVelocity.y = jumpSpeed;
@@ -156,13 +110,8 @@ namespace Meta.XR.MRUtilityKitSamples.PassthroughRelighting
             {
                 _jumpingState = JumpingState.JumpedAndAirborne;
             }
-
-            if (_jumpingState != JumpingState.Grounded && jumpButtonPressed)
-            {
-                _moveVelocity.y += keepPressedJumpAcceleration * Time.deltaTime;
-            }
-
-            if (_jumpingState == JumpingState.Grounded && _characterController.isGrounded && jumpButtonDown)
+            
+            if (_jumpingState == JumpingState.Grounded && _characterController.isGrounded)
             {
                 _jumpingState = JumpingState.JumpStarted;
                 StartCoroutine(RequestJumpAfterSeconds(JumpDelay));
@@ -179,6 +128,31 @@ namespace Meta.XR.MRUtilityKitSamples.PassthroughRelighting
         {
             yield return new WaitForSeconds(delay);
             _jumpRequested = true;
+        }
+        
+        public void SetAnimation(string animationName, bool value)
+        {
+            _animator.SetBool(animationName, value);
+        }
+        
+        public void TriggerAnimation(string animationName)
+        {
+            _animator.SetTrigger(animationName);
+        }
+
+        public bool IsGrounded()
+        {
+            return _characterController.isGrounded;
+        }
+
+        public JumpingState GetJumpingState()
+        {
+            return _jumpingState;
+        }
+        
+        public void SetJumpingState(JumpingState state)
+        {
+            _jumpingState = state;
         }
     }
 }

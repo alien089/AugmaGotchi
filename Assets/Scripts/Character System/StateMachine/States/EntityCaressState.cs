@@ -18,20 +18,14 @@ namespace Character_System.StateMachine.States
         public override void OnEnter()
         {
             base.OnEnter();
-            _xEntityStateManager.xEntityController.XCaressComponent.EnableComponent(true);
-        }
-
-        // Called every frame while in the Caress state; currently invokes base behavior.
-        public override void OnUpdate()
-        {
-            base.OnUpdate();
+            _xEntityStateManager.XEntityController.XCaressComponent.EnableComponent(true);
         }
 
         // Enables the CaressComponent on exiting the Caress state (likely intended to disable it).
         public override void OnExit()
         {
             base.OnExit();
-            _xEntityStateManager.xEntityController.XCaressComponent.EnableComponent(false);
+            _xEntityStateManager.XEntityController.XCaressComponent.EnableComponent(false);
         }
     }
 }
