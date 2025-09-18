@@ -13,10 +13,13 @@ namespace Character_System.Entity_Toy_System.Toy_State_Machine
         public OppyCharacterController XOppyCharacterController;
         
         // Constructor that links the state manager to its entity controller.
-        public ToyStateManager(EntityToyState controller) : base()
+        public ToyStateManager(EntityToyState controller, ref OppyCharacterController characterController) : base()
         { 
             XToyController = controller;
-            XOppyCharacterController = controller.XOppyCharacterController;
+            XOppyCharacterController = XToyController.XOppyCharacterController;
+            
+            ClearStates();
+            InitStatesManager();
         }
 
         // Initializes the dictionary of states with specific entity state instances.

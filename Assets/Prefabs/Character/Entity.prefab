@@ -2916,6 +2916,7 @@ GameObject:
   - component: {fileID: 5016208029168537074}
   - component: {fileID: 5624740779527927393}
   - component: {fileID: 4174549102362788504}
+  - component: {fileID: 3430823313535928771}
   m_Layer: 0
   m_Name: Entity
   m_TagString: Untagged
@@ -2976,11 +2977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a54ec9d2b3a0a0749aa13a2bca162e54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementFrameOfReference: {fileID: 0}
   jumpSpeed: 4
-  keepPressedJumpAcceleration: 1
-  jumpButton: 5
-  respawnTransform: {fileID: 0}
   maximumLinearSpeed: 0.9
   gravity: -9.8
 --- !u!114 &8216812762657385509
@@ -3088,6 +3085,28 @@ MonoBehaviour:
     type: 3}
   _xToyComponentPrefab: {fileID: 6822104663950317443, guid: bf76be0cd57165c45843792fdb48c3bd,
     type: 3}
+--- !u!195 &3430823313535928771
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6175803804760289222}
+  m_Enabled: 0
+  m_AgentTypeID: 0
+  m_Radius: 0.22
+  m_Speed: 1
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0.1
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.59
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &6277746039609309932
 GameObject:
   m_ObjectHideFlags: 0

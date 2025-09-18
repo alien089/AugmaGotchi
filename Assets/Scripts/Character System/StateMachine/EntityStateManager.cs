@@ -12,19 +12,23 @@ namespace Character_System.StateMachine
         private OppyCharacterController xOppyCharacterController;
         
         public EntityController XEntityController { get => _xEntityController; }
+        public OppyCharacterController XOppyCharacterController { get => xOppyCharacterController; }
 
         // Constructor that links the state manager to its entity controller.
-        public EntityStateManager(EntityController controller, OppyCharacterController characterController) : base()
+        public EntityStateManager(EntityController controller, ref OppyCharacterController characterController) : base()
         {
             _xEntityController = controller;
-            xOppyCharacterController = characterController;
+            xOppyCharacterController = controller.XOppyCharacterController;    
+            
+            ClearStates();
+            InitStatesManager();
         }
 
         // Initializes the dictionary of states with specific entity state instances.
         protected override void InitStates()
         {
             StatesList.Add(EntityStates.IDLE, new EntityIdleState(EntityStates.IDLE, this));
-            StatesList.Add(EntityStates.TOY, new EntityToyState(EntityStates.TOY, xOppyCharacterController, this));
+            StatesList.Add(EntityStates.TOY, new EntityToyState(EntityStates.TOY, ref xOppyCharacterController,  this));
             StatesList.Add(EntityStates.FOOD, new EntityFoodState(EntityStates.FOOD, this));
             StatesList.Add(EntityStates.CARESS, new EntityCaressState(EntityStates.CARESS, this));
         }

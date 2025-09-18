@@ -26,12 +26,13 @@ namespace Character_System.StateMachine.States
         public OppyCharacterController XOppyCharacterController { get => _xOppyCharacterController; }
         
         // Constructor linking this state to its state manager.
-        public EntityToyState(EntityStates stateID, OppyCharacterController characterController, StatesMachine<EntityStates> stateMachine = null) : base(stateID, stateMachine)
+        public EntityToyState(EntityStates stateID, ref OppyCharacterController characterController, StatesMachine<EntityStates> stateMachine = null) : base(stateID, stateMachine)
         {
             _xEntityStateManager = (EntityStateManager)stateMachine;
-            _xOppyCharacterController = characterController;
-            
-            _xToyStateManager = new ToyStateManager(this);
+            if (_xEntityStateManager == null) return;
+            _xOppyCharacterController = _xEntityStateManager.XOppyCharacterController;
+
+            _xToyStateManager = new ToyStateManager(this, ref _xOppyCharacterController);
             _xToyStateManager.CurrentState = _xToyStateManager.StatesList[ToyStates.IDLE];
             
             GameManager.Instance.EventManager.Register(EntityEventList.CHANGE_TOY_STATE, SetFlag);

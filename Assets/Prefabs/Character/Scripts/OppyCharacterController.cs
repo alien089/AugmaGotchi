@@ -129,6 +129,11 @@ namespace Meta.XR.MRUtilityKitSamples.PassthroughRelighting
             yield return new WaitForSeconds(delay);
             _jumpRequested = true;
         }
+
+        public void DisableAnimator()
+        {
+            _animator.enabled = false;
+        }
         
         public void SetAnimation(string animationName, bool value)
         {

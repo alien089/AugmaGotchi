@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5628702625057833099}
   - component: {fileID: 3231749113773134267}
   - component: {fileID: 7957843848402201901}
+  - component: {fileID: 450675796392152622}
   - component: {fileID: 3876542435354603751}
   - component: {fileID: 5627153008103688311}
-  - component: {fileID: 450675796392152622}
   m_Layer: 0
   m_Name: alienToy
   m_TagString: Untagged
@@ -87,6 +87,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &450675796392152622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4871170796911948306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c021f1d6ec403bb661657443ac9b27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fIncrementValue: 0
+  fVelocityThreshold: 0.35
 --- !u!135 &3876542435354603751
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -135,20 +149,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &450675796392152622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4871170796911948306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3c021f1d6ec403bb661657443ac9b27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fIncrementValue: 0
-  fVelocityThreshold: 0.1
 --- !u!1 &5656987521171088969
 GameObject:
   m_ObjectHideFlags: 0

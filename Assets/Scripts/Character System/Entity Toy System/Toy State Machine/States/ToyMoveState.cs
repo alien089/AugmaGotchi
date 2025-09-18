@@ -37,24 +37,23 @@ namespace Character_System.Entity_Toy_System.Toy_State_Machine.States
         public override void OnUpdate()
         {
             base.OnUpdate();
+            if (_xNavMeshAgent.pathPending) return;
             if (_xNavMeshAgent.remainingDistance <= _xNavMeshAgent.stoppingDistance)
             {
-                GameManager.Instance.EventManager.TriggerEvent(EntityEventList.CHANGE_TOY_STATE, ToyStates.GRAB);
+                _xOppyCharacterController.SetAnimation("Running", false);
                 _xNavMeshAgent.ResetPath();
+                GameManager.Instance.EventManager.TriggerEvent(EntityEventList.CHANGE_TOY_STATE, ToyStates.GRAB);
             }
-            
-            if (_xNavMeshAgent.isOnOffMeshLink)
+            else if (_xNavMeshAgent.isOnOffMeshLink)
             {
                 if (_xNavMeshAgent.currentOffMeshLinkData.linkType != OffMeshLinkType.LinkTypeJumpAcross) return;
 
-                if (_xOppyCharacterController.GetJumpingState() == OppyCharacterController.JumpingState.Grounded && 
-                    _xOppyCharacterController.IsGrounded())
+                if (_xOppyCharacterController.GetJumpingState() == OppyCharacterController.JumpingState.Grounded)
                 {
                     _xOppyCharacterController.SetJumpingState(OppyCharacterController.JumpingState.JumpStarted);
                     _xOppyCharacterController.TriggerAnimation("Jumping");
                 }
-                else if (_xOppyCharacterController.GetJumpingState() == OppyCharacterController.JumpingState.JumpedAndAirborne && 
-                    _xOppyCharacterController.IsGrounded())
+                else if (_xOppyCharacterController.GetJumpingState() == OppyCharacterController.JumpingState.JumpedAndAirborne)
                 {
                     _xOppyCharacterController.TriggerAnimation("Landed");
                     _xOppyCharacterController.SetJumpingState(OppyCharacterController.JumpingState.Grounded);

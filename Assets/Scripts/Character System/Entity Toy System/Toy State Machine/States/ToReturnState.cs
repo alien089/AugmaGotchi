@@ -29,19 +29,30 @@ namespace Character_System.Entity_Toy_System.Toy_State_Machine.States
             base.OnEnter();
             _xNavMeshAgent = _xToyStateManager.XToyController.XNavMeshAgent;
             _xOppyCharacterController = _xToyStateManager.XOppyCharacterController;
-            _xNavMeshAgent.SetDestination(PlayerController.Instance.transform.position);
+            _xNavMeshAgent.SetDestination(GetDestination());
+        }
+
+        private Vector3 GetDestination()
+        {
+            Vector3 destination = PlayerController.Instance.FPlayerPosition.position;
+            destination.y = 0f;
+            return destination;
         }
         
         public override void OnUpdate()
         {
             base.OnUpdate();
             
-            _xNavMeshAgent.SetDestination(PlayerController.Instance.transform.position);
+            _xNavMeshAgent.SetDestination(GetDestination());
             
+            if (_xNavMeshAgent.pathPending) return;
             if (_xNavMeshAgent.remainingDistance <= _xNavMeshAgent.stoppingDistance)
             {
-                GameManager.Instance.EventManager.TriggerEvent(EntityEventList.CHANGE_ENTITY_STATE, EntityStates.IDLE);
+                _xOppyCharacterController.DisableAnimator();
+                _xOppyCharacterController.SetAnimation("Running", false);
                 _xNavMeshAgent.ResetPath();
+                GameManager.Instance.EventManager.TriggerEvent(EntityEventList.CHANGE_TOY_STATE, ToyStates.IDLE);
+                GameManager.Instance.EventManager.TriggerEvent(EntityEventList.CHANGE_ENTITY_STATE, EntityStates.IDLE);
                 GameManager.Instance.EventManager.TriggerEvent(ToyEventList.TOY_RETURNED);
             }
             
@@ -71,7 +82,6 @@ namespace Character_System.Entity_Toy_System.Toy_State_Machine.States
         public override void OnExit()
         {
             base.OnExit();
-            _xOppyCharacterController.SetAnimation("Running", false);
         }
     }
 }

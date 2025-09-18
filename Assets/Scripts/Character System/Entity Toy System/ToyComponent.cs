@@ -4,7 +4,6 @@ using UnityEngine.TextCore.Text;
 
 namespace Character_System.Entity_Toy_System
 {
-    [RequireComponent(typeof(NavMeshAgent))]
     public class ToyComponent : MonoBehaviour
     {
         private NavMeshAgent _xNavAgent;
@@ -13,7 +12,7 @@ namespace Character_System.Entity_Toy_System
         // Start is called before the first frame update
         void Start()
         {
-            _xNavAgent = GetComponent<NavMeshAgent>();
+            _xNavAgent = transform.parent.GetComponent<NavMeshAgent>();
             _xNavAgent.enabled = false;
         }
         

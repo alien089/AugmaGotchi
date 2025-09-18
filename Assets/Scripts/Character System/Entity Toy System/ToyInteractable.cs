@@ -45,7 +45,6 @@ namespace Character_System.Entity_Toy_System
         {
             if (_bIsDocked) return;
             if (_bIsGrabbed) return;
-            if (_xRigidBody.velocity.magnitude != 0f) return;
             if (_xRigidBody.velocity.magnitude > fVelocityThreshold) return;
             SetGravity(false);
             ToyThrown();
@@ -61,8 +60,8 @@ namespace Character_System.Entity_Toy_System
         // Called when the object is grabbed; triggers TOY_GRABBED event.
         private void OnGrabEnter(IInteractorView interactor)
         {
-            if (_bIsDocked == false) return;
             _bIsDocked = false;
+            _bIsGrabbed = true;
 
             SetGravity(true);
 
@@ -79,9 +78,12 @@ namespace Character_System.Entity_Toy_System
         private void ToyThrown()
         {
             Vector3 pos = new Vector3(
-                gameObject.transform.position.x, 
-                gameObject.transform.position.y - gameObject.transform.localScale.x/2, 
-                gameObject.transform.position.z);
+                transform.position.x, 
+                transform.position.y - transform.localScale.x/2, 
+                transform.position.z);
+
+            transform.position = pos;
+            _bIsGrabbed = true;
             
             GameManager.Instance.EventManager.TriggerEvent(ToyEventList.TOY_THROWN, pos);
         }
@@ -95,8 +97,14 @@ namespace Character_System.Entity_Toy_System
         
         private void ToyReturned(object[] param)
         {
-            GameManager.Instance.EventManager.TriggerEvent(FoodEventList.RESPAWN_FOOD);
+            GameManager.Instance.EventManager.TriggerEvent(ToyEventList.RESPAWN_TOY);
             Destroy(gameObject);
+        }
+
+        private void OnDestroy()
+        {
+            GameManager.Instance.EventManager.Unregister(ToyEventList.TOY_COLLECTED, ToyCollected);
+            GameManager.Instance.EventManager.Unregister(ToyEventList.TOY_RETURNED, ToyReturned);
         }
 
         private void SetGravity(bool isOn)

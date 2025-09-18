@@ -38,7 +38,7 @@ namespace Character_System
         {
             // Initialize state manager and set initial state to IDLE.
             _xOppyCharacterController = GetComponent<OppyCharacterController>();
-            _xEntityStateManager = new EntityStateManager(this, _xOppyCharacterController);
+            _xEntityStateManager = new EntityStateManager(this, ref _xOppyCharacterController);
             _xEntityStateManager.CurrentState = _xEntityStateManager.StatesList[EntityStates.IDLE];
 
             // Register to listen for state change events.

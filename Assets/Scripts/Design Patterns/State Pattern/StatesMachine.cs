@@ -32,6 +32,11 @@ namespace Framework.Generics.Pattern.StatePattern
             InitStates();
         }
 
+        protected void ClearStates()
+        {
+            StatesList.Clear();
+        }
+
         /// <summary>
         /// Loads all the states in the dictionary 
         /// </summary>
