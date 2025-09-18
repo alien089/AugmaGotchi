@@ -9,12 +9,12 @@ namespace Character_System.Entity_Toy_System.Toy_State_Machine.States
     // Represents the Joy state of an entity, currently with default behavior.
     public class ToyIdleState : State<ToyStates>
     {
-        private ToyStateManager _xEntityStateManager;
+        private ToyStateManager _xToyStateManager;
         
         // Constructor linking this state to its state manager.
         public ToyIdleState(ToyStates stateID, StatesMachine<ToyStates> stateMachine = null) : base(stateID, stateMachine)
         {
-            _xEntityStateManager = (ToyStateManager)stateMachine;
+            _xToyStateManager = (ToyStateManager)stateMachine;
         }
         
         public override void OnEnter()

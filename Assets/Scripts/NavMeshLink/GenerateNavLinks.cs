@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Meta.XR.MRUtilityKit;
 using UnityEngine;
 using Unity.AI.Navigation;
+using UnityEngine.AI;
 
 namespace Augma.GenerationNavMeshLinks
 {
@@ -209,6 +210,8 @@ namespace Augma.GenerationNavMeshLinks
             link.endPoint = _closestPointFromBToA;
             link.bidirectional = bidirectionalLinks;
             link.width = linkWidth;
+            int areaId = NavMesh.GetAreaFromName("Jump");
+            link.area = areaId;
 
             // Store the points globally if we're currently connecting floor colliders.
             if (_bfloorNow == true)

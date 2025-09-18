@@ -18,6 +18,7 @@ namespace Character_System.StateMachine.States
         public override void OnEnter()
         {
             base.OnEnter();
+            _xEntityStateManager.XOppyCharacterController.EnableAnimator();
         }
 
         // Called every frame while in the Idle state; currently invokes base behavior.

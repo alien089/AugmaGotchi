@@ -66,6 +66,7 @@ namespace Character_System.StateMachine.States
             _xEntityStateManager.XEntityController.XToyComponent.EnableComponent(false);
             _xNavMeshAgent = null;
             _xToyPosition = Vector3.zero;
+            _xToyStateManager.ChangeState(ToyStates.IDLE);
         }
         
         private void SetFlag(object[] param)

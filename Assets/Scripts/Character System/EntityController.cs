@@ -15,6 +15,9 @@ namespace Character_System
     // Controls entity state management, component instantiation, and state transitions during runtime.
     public class EntityController : MonoBehaviour
     {
+        [SerializeField] private float _fMoveStoppingDistance;
+        [SerializeField] private float _fReturnStoppingDistance;
+        
         [SerializeField] private GameObject _xFoodComponentPrefab;
         [SerializeField] private GameObject _xCaressComponentPrefab;
         [SerializeField] private GameObject _xToyComponentPrefab;
@@ -27,7 +30,9 @@ namespace Character_System
         private ToyComponent _xToyComponent;
         
         private OppyCharacterController _xOppyCharacterController;
-
+        
+        public float FMoveStoppingDistance { get => _fMoveStoppingDistance; }
+        public float FReturnStoppingDistance { get => _fReturnStoppingDistance; }
         public FoodComponent XFoodComponent { get => _xFoodComponent; }
         public CaressComponent XCaressComponent { get => _xCaressComponent; }
         public ToyComponent XToyComponent { get => _xToyComponent; }

@@ -99,8 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c021f1d6ec403bb661657443ac9b27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fIncrementValue: 0
-  fVelocityThreshold: 0.35
+  fVelocityThreshold: 0.25
 --- !u!135 &3876542435354603751
 SphereCollider:
   m_ObjectHideFlags: 0

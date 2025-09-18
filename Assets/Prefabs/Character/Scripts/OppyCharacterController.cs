@@ -29,7 +29,6 @@ namespace Meta.XR.MRUtilityKitSamples.PassthroughRelighting
     ///     Listens to the user's input, moves and animates Oppy accordingly.
     /// </summary>
     [MetaCodeSample("MRUKSample-PassthroughRelighting")]
-    [RequireComponent(typeof(CharacterController))]
     [RequireComponent(typeof(Animator))]
     public class OppyCharacterController : MonoBehaviour
     {
@@ -42,7 +41,6 @@ namespace Meta.XR.MRUtilityKitSamples.PassthroughRelighting
         [SerializeField] private float gravity = -9.8f;
 
         [FormerlySerializedAs("_animator")] private Animator _animator;
-        private CharacterController _characterController;
 
         private Vector3 _moveVelocity;
         private Quaternion _rotation;
@@ -61,7 +59,6 @@ namespace Meta.XR.MRUtilityKitSamples.PassthroughRelighting
 
         void Awake()
         {
-            _characterController = GetComponent<CharacterController>();
             _animator = GetComponent<Animator>();
         }
 
@@ -85,7 +82,6 @@ namespace Meta.XR.MRUtilityKitSamples.PassthroughRelighting
         private void ApplyMotion()
         {
             _moveVelocity.y += gravity * Time.deltaTime;
-            _characterController.Move(_moveVelocity * Time.deltaTime);
             if (Mathf.Abs(_motionInput.y) > 0 || Mathf.Abs(_motionInput.x) > 0)
             {
                 transform.rotation = _rotation;
@@ -95,7 +91,6 @@ namespace Meta.XR.MRUtilityKitSamples.PassthroughRelighting
         private void HandleLocomotion()
         {
             bool noMovementInput = Mathf.Abs(_motionInput.y) == 0 && Mathf.Abs(_motionInput.x) == 0;
-            _animator.SetBool("Running", !noMovementInput && _characterController.isGrounded);
         }
 
         private void HandleJumping()
@@ -104,23 +99,6 @@ namespace Meta.XR.MRUtilityKitSamples.PassthroughRelighting
             {
                 _moveVelocity.y = jumpSpeed;
                 _jumpRequested = false;
-            }
-
-            if (_jumpingState == JumpingState.JumpStarted && !_characterController.isGrounded)
-            {
-                _jumpingState = JumpingState.JumpedAndAirborne;
-            }
-            
-            if (_jumpingState == JumpingState.Grounded && _characterController.isGrounded)
-            {
-                _jumpingState = JumpingState.JumpStarted;
-                StartCoroutine(RequestJumpAfterSeconds(JumpDelay));
-                _animator.SetTrigger("Jumping");
-            }
-            else if (_characterController.isGrounded && _jumpingState == JumpingState.JumpedAndAirborne)
-            {
-                _animator.SetTrigger("Landed");
-                _jumpingState = JumpingState.Grounded;
             }
         }
 
@@ -135,6 +113,11 @@ namespace Meta.XR.MRUtilityKitSamples.PassthroughRelighting
             _animator.enabled = false;
         }
         
+        public void EnableAnimator()
+        {
+            _animator.enabled = true;
+        }
+        
         public void SetAnimation(string animationName, bool value)
         {
             _animator.SetBool(animationName, value);
@@ -143,11 +126,6 @@ namespace Meta.XR.MRUtilityKitSamples.PassthroughRelighting
         public void TriggerAnimation(string animationName)
         {
             _animator.SetTrigger(animationName);
-        }
-
-        public bool IsGrounded()
-        {
-            return _characterController.isGrounded;
         }
 
         public JumpingState GetJumpingState()

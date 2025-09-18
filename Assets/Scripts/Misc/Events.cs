@@ -127,4 +127,14 @@ public static class ToyEventList
     /// params: none
     /// </summary>
     public static string TOY_RETURNED = "TOY_RETURNED"; 
+    
+    /// <summary>
+    /// params: none
+    /// </summary>
+    public static string TOY_GIVEN_CALL = "TOY_GIVEN_CALL"; 
+    
+    /// <summary>
+    /// params: Stats statType, float incrementValue 
+    /// </summary>
+    public static string TOY_GIVEN = "TOY_GIVEN"; 
 }

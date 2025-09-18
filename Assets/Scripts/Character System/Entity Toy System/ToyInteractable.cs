@@ -1,4 +1,5 @@
 ﻿using System;
+using Enums;
 using Managers;
 using Oculus.Interaction;
 using Oculus.Interaction.HandGrab;
@@ -11,10 +12,7 @@ namespace Character_System.Entity_Toy_System
     // Represents a food item that can be grabbed and triggers related events.
     public class ToyInteractable : MonoBehaviour
     {
-        [SerializeField] private float fIncrementValue;
         [SerializeField] private float fVelocityThreshold;
-
-        public float FIncrementValue => fIncrementValue;
         public float FVelocityThreshold => fVelocityThreshold;
 
         private Rigidbody _xRigidBody;
@@ -98,6 +96,7 @@ namespace Character_System.Entity_Toy_System
         private void ToyReturned(object[] param)
         {
             GameManager.Instance.EventManager.TriggerEvent(ToyEventList.RESPAWN_TOY);
+            GameManager.Instance.EventManager.TriggerEvent(EntityEventList.CHANGE_ENTITY_STATE, EntityStates.IDLE);
             Destroy(gameObject);
         }
 

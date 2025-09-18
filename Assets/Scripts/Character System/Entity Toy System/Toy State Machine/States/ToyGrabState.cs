@@ -11,18 +11,18 @@ namespace Character_System.Entity_Toy_System.Toy_State_Machine.States
     // Represents the Joy state of an entity, currently with default behavior.
     public class ToyGrabState : State<ToyStates>
     {
-        private ToyStateManager _xEntityStateManager;
+        private ToyStateManager _xToyStateManager;
         
         // Constructor linking this state to its state manager.
         public ToyGrabState(ToyStates stateID, StatesMachine<ToyStates> stateMachine = null) : base(stateID, stateMachine)
         {
-            _xEntityStateManager = (ToyStateManager)stateMachine;
+            _xToyStateManager = (ToyStateManager)stateMachine;
         }
         
         public override void OnEnter()
         {
             base.OnEnter();
-            Transform transformEntity = _xEntityStateManager.XToyController.XEntityStateManager.XEntityController.transform;
+            Transform transformEntity = _xToyStateManager.XToyController.XEntityStateManager.XEntityController.transform;
             GameManager.Instance.EventManager.TriggerEvent(ToyEventList.TOY_COLLECTED, transformEntity);
             
             GameManager.Instance.EventManager.TriggerEvent(EntityEventList.CHANGE_TOY_STATE, ToyStates.RETURN);

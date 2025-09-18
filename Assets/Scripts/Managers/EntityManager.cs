@@ -27,6 +27,7 @@ namespace Managers
             GameManager.Instance.EventManager.Register(EntityEventList.SPAWN_ENTITY, SpawnEntity);
             GameManager.Instance.EventManager.Register(FoodEventList.FOOD_GIVEN, IncrementStatsEvent);
             GameManager.Instance.EventManager.Register(CaressEventList.CARESS_GIVEN, IncrementStatsEvent);
+            GameManager.Instance.EventManager.Register(ToyEventList.TOY_GIVEN, IncrementStatsEvent);
         }
 
         // Unregister event listeners on application quit
@@ -35,6 +36,7 @@ namespace Managers
             GameManager.Instance.EventManager.Unregister(EntityEventList.SPAWN_ENTITY, SpawnEntity);
             GameManager.Instance.EventManager.Unregister(FoodEventList.FOOD_GIVEN, IncrementStatsEvent);
             GameManager.Instance.EventManager.Unregister(CaressEventList.CARESS_GIVEN, IncrementStatsEvent);
+            GameManager.Instance.EventManager.Unregister(ToyEventList.TOY_GIVEN, IncrementStatsEvent);
         }
 
         // Updates stats decrement and hunger state every frame
@@ -43,7 +45,7 @@ namespace Managers
             if (!_xEntity) return;
 
             // Decrement joy, food and caress stats over time
-            DecrementStats(Stats.JOY, _fDecrementValue[Stats.JOY]);
+            DecrementStats(Stats.TOY, _fDecrementValue[Stats.TOY]);
             DecrementStats(Stats.FOOD, _fDecrementValue[Stats.FOOD]);
             DecrementStats(Stats.CARESS, _fDecrementValue[Stats.CARESS]);
 

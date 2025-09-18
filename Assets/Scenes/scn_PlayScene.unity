@@ -409,21 +409,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
-    - target: {fileID: 5586488570249537923, guid: db30279ca55b61c4ea80f01c7425946d,
-        type: 3}
-      propertyPath: fDistanceThreshold
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5586488570249537923, guid: db30279ca55b61c4ea80f01c7425946d,
-        type: 3}
-      propertyPath: linkCompenstationAmount
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6443030810508291059, guid: db30279ca55b61c4ea80f01c7425946d,
-        type: 3}
-      propertyPath: hideMesh
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 9177436397965404106, guid: db30279ca55b61c4ea80f01c7425946d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -487,16 +472,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1866148522588880380, guid: 1acfe7879c8b2cc47a4ad40e7efeb6ba,
-        type: 3}
-      propertyPath: SceneSettings.RoomIndex
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1866148522588880380, guid: 1acfe7879c8b2cc47a4ad40e7efeb6ba,
-        type: 3}
-      propertyPath: SceneSettings.DataSource
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1941956467066389099, guid: 1acfe7879c8b2cc47a4ad40e7efeb6ba,
         type: 3}
       propertyPath: m_Name
@@ -578,7 +553,7 @@ PrefabInstance:
     - target: {fileID: 1624651781674781997, guid: 9d1e2865952a34f4fbfb58f8a1d28aa7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.56
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1624651781674781997, guid: 9d1e2865952a34f4fbfb58f8a1d28aa7,
         type: 3}
